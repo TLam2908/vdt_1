@@ -35,7 +35,7 @@ const Hero = () => {
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 1.5,
           ease: "power2.out",
         }
       )
@@ -50,7 +50,7 @@ const Hero = () => {
           {
             y: 0,
             opacity: 1,
-            duration: 1,
+            duration: 2,
             stagger: 0.2,
             ease: "power3.out",
           },
@@ -65,7 +65,7 @@ const Hero = () => {
             duration: 1.2,
             ease: "power2.inOut",
           },
-          "-=0.2"
+          "<"
         );
     },
     { scope: sectionRef }

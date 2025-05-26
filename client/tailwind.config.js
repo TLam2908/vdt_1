@@ -14,6 +14,7 @@ export default {
         },
         zinc: "#101010",
       },
+      
     },
   },
   plugins: [],

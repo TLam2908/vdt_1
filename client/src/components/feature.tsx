@@ -21,7 +21,7 @@ const Feature = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.2,
+        duration: 2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
