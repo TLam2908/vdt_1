@@ -1,0 +1,121 @@
+import { useEffect, useState, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import Title from "../title";
+import { bannerImg, bannerSmallImg } from "../../utils";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Banner = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [imgSrc, setImgSrc] = useState(
+    window.innerWidth > 1280 ? bannerImg : bannerSmallImg
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setImgSrc(window.innerWidth > 1280 ? bannerImg : bannerSmallImg);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useGSAP(() => {
+    gsap.set([".banner-img", "#title", ".banner-text", ".banner-button"], { 
+      opacity: 0 
+    });
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 50%", // Bắt đầu animation khi phần trên của section xuất hiện ở 70% chiều cao viewport
+        toggleActions: "play none none none", // Chạy khi vào view, reset khi ra khỏi view
+      }
+    });
+    
+    // Banner image animation
+    tl.fromTo(
+      "#banner-img", 
+      { scale: 1.1, opacity: 0 }, 
+      { 
+        scale: 1, 
+        opacity: 1, 
+        duration: 1.5, 
+        ease: "power3.out" 
+      }
+    )
+    
+    // Title animation
+    .fromTo(
+      "#title", 
+      { y: 30, opacity: 0 }, 
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        ease: "power3.out" 
+      },
+      "-=0.8" // Overlap với animation trước
+    )
+    
+    // Text animation
+    .fromTo(
+      "#banner-text", 
+      { y: 20, opacity: 0 }, 
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8, 
+        stagger: 0.2, 
+        ease: "back.out(1.2)" 
+      },
+      "-=0.5"
+    )
+    
+    // Button animation
+    .fromTo(
+      "#banner-button", 
+      { scale: 0.8, opacity: 0 }, 
+      { 
+        scale: 1, 
+        opacity: 1, 
+        duration: 0.5,
+        ease: "elastic.out(1, 0.5)" 
+      }
+    );
+
+  }, { scope: sectionRef });
+
+  return (
+    <section ref={sectionRef} className="w-full bg-gray-50">
+      <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-40">
+        <div
+          id="title"
+          className="flex flex-row justify-between max-md:flex-col max-md:items-start md:justify-between items-center mb-"
+        >
+          <Title text="Take a closer look." />
+        </div>
+
+        <div className="relative w-full h-full flex flex-col">
+          <div className="h-[680px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[400px] welcome-video flex overflow-hidden">
+            <img id="banner-img" src={imgSrc} alt="banner" className="w-full rounded-2xl" />
+          </div>
+          <div className="absolute flex flex-col items-center justify-center top-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xl:left-1/4 xl:top-1/2">
+            <div id="banner-text" className=" text-white text-xl max-sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+              A Guided Tour of
+            </div>
+            <div id="banner-text" className=" text-white text-xl max-sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+              iPhone 16 & iPhone 16 Pro
+            </div>
+            <button id="banner-button" className="px-5 py-3 rounded-full bg-white mt-5 text-black">Watch the film</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Banner;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { appleImg } from "../utils";
-import { navLists } from "../utils/constants";
+import { appleImg } from "../../utils";
+import { navLists } from "../../utils/constants";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {

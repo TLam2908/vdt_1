@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import { heroVidSrc, heroVidSmallSrc } from "../utils";
+import { heroVidSrc, heroVidSmallSrc } from "../../utils";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -94,7 +94,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="w-10/12 max-md:w-9/12 px-16 max-md:px-5 mx-auto pt-20 pb-32">
+      <div className="w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-20">
         <div className="flex max-md:flex-col justify-between items-center max-md:items-start">
           <h1
             id="heroTitle"
@@ -113,7 +113,7 @@ const Hero = () => {
 
       <div
         id="welcomeVideo"
-        className="w-10/12 max-md:w-9/12 flex justify-center mx-auto opacity-0"
+        className="w-10/12 flex justify-center mx-auto opacity-0"
       >
         <div
           className={`

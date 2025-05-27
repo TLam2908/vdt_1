@@ -1,8 +1,9 @@
 import "./App.css";
-import Explore from "./components/explore";
-import Feature from "./components/feature";
-import Hero from "./components/hero";
-import Navbar from "./components/navbar";
+import Banner from "./components/landing/banner";
+import Explore from "./components/landing/explore";
+import Feature from "./components/landing/feature";
+import Hero from "./components/landing/hero";
+import Navbar from "./components/landing/navbar";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <Feature />
       <Explore />
+      <Banner />
     </div>
   );
 }

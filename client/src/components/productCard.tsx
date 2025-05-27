@@ -1,3 +1,4 @@
+
 import type { ProductLanding } from "../types/productLanding";
 import { ChevronRight, Minus } from "lucide-react";
 
@@ -48,7 +49,7 @@ const CameraSystem = ({
               {detail}
             </li>
           ) : (
-            <Minus className="w-4 h-4 mb-2 text-black" />
+            <Minus key={index} className="w-4 h-4 mb-2 text-black" />
           )
         )}
       </ul>

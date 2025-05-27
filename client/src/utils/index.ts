@@ -35,6 +35,10 @@ import cam15 from "../assets/landing/images/dualcam15.png"
 import appleIntelligence from "../assets/landing/images/apple_intell.png"
 import control from "../assets/landing/images/control.png"
 
+// Banner 
+import banner from "../assets/landing/images/banner.jpg"
+import bannerSmall from "../assets/landing/images/banner_small.jpg"
+
 
 // Export video sources for the hero section
 export const heroVidSrc = heroVid
@@ -72,3 +76,7 @@ export const cam16eImg = cam16e
 export const cam15Img = cam15
 export const appleIntelligenceImg = appleIntelligence
 export const controlImg = control
+
+// Export banner image
+export const bannerImg = banner
+export const bannerSmallImg = bannerSmall
