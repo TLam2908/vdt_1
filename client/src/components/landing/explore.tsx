@@ -3,22 +3,41 @@ import { productLanding } from "../../utils/constants";
 import type { ProductLanding } from "../../types/productLanding";
 import ProductCard from "./../productCard";
 
-import { useRef } from "react";
+import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/mousewheel";
+
+import { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore = () => {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsWideScreen(window.innerWidth > 1536);
+    }
+    checkScreenWidth();
+
+    window.addEventListener("resize", checkScreenWidth);
+    return () => {
+      window.removeEventListener("resize", checkScreenWidth);
+    }
+  }, [])
+
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-     
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 70%",
-          toggleActions: "play none none reset",
+          toggleActions: "play none none none",
         },
       });
 
@@ -34,8 +53,7 @@ const Explore = () => {
           duration: 1.5,
           ease: "power3.out",
         }
-      )
-      .fromTo(
+      ).fromTo(
         "#product-item",
         {
           y: 50,
@@ -64,18 +82,46 @@ const Explore = () => {
           <Title text="Explore the lineup." />
           <a
             href="#"
-            className="text-blue-500 text-md hover:underline transition-all"
+            className="text-blue-500 text-md hover:underline transition-all mb-10"
           >
             Compare all models &gt;
           </a>
         </div>
-        <div className="grid grid-cols-4 max-md:grid-cols-1 max-2xl:grid-cols-2 gap-5 mt-10">
-          {productLanding.map((product: ProductLanding) => (
-            <div id="product-item" key={product.id}>
-              <ProductCard product={product} key={product.id} />
-            </div>
-          ))}
-        </div>
+        {isWideScreen ? (
+          <div className="grid grid-cols-4 gap-5 mt-10">
+            {productLanding.map((product: ProductLanding) => (
+              <div id="product-item" key={product.id}>
+                <ProductCard product={product} key={product.id} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div>
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay, Mousewheel]}
+              spaceBetween={20}
+              slidesPerView="auto"
+              mousewheel={true}
+              loop={true}
+              freeMode={true}
+              breakpoints={{
+                0: { slidesPerView: 1, spaceBetween: 10 },
+                480: { slidesPerView: 1, spaceBetween: 15 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1072: { slidesPerView: 2, spaceBetween: 30 },
+                1440: { slidesPerView: 2, spaceBetween: 30 },
+              }}
+            >
+              {productLanding.map((product: ProductLanding) => (
+                <SwiperSlide key={product.id} className="w-full h-full">
+                  <div id="product-item">
+                    <ProductCard product={product} />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
       </div>
     </section>
   );

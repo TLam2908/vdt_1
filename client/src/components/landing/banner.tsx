@@ -94,13 +94,13 @@ const Banner = () => {
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-40">
         <div
           id="title"
-          className="flex flex-row justify-between max-md:flex-col max-md:items-start md:justify-between items-center mb-"
+          className="flex flex-row justify-between max-md:flex-col max-md:items-start md:justify-between items-center mb-10"
         >
           <Title text="Take a closer look." />
         </div>
 
         <div className="relative w-full h-full flex flex-col">
-          <div className="h-[680px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[400px] welcome-video flex overflow-hidden">
+          <div className="h-[680px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[500px] welcome-video flex overflow-hidden">
             <img id="banner-img" src={imgSrc} alt="banner" className="w-full rounded-2xl" />
           </div>
           <div className="absolute flex flex-col items-center justify-center top-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xl:left-1/4 xl:top-1/2">

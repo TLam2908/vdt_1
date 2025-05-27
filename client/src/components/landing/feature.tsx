@@ -35,7 +35,7 @@ const Feature = () => {
   return (
     <section 
       ref={sectionRef}
-      className="flex flex-col w-10/12 max-md:w-9/12 px-16 max-md:px-5 mx-auto pt-40 pb-20"
+      className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-40 pb-20"
     >
       <div id="title" className="mb-10">
         <Title text="Explore iPhone" />
