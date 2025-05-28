@@ -4,16 +4,63 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/mousewheel";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 import { reasons } from "../../utils/constants";
 import ReasonCard from "../reasonCard";
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 const Reason = () => {
+  const sectionRef = useRef(null);
+  
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    tl.fromTo(
+      "#reason-title-container",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      }
+    ).fromTo(
+      ".reason-card",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power2.out",
+      },
+      "-=0.8"
+    );
+  }, { scope: sectionRef });
+
   return (
-    <section className="w-full bg-gray-50">
+    <section ref={sectionRef} className="w-full bg-gray-50">
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-20">
         <div
-          id="title-container"
+          id="reason-title-container"
           className="flex flex-row max-md:flex-col max-md:items-start md:justify-between items-center"
         >
           <div className="flex flex-col">
@@ -52,12 +99,14 @@ const Reason = () => {
             }}
           >
             {reasons.map((reason) => (
-              <SwiperSlide key={reason.id} className="">
-                <ReasonCard
-                  img={reason.img}
-                  title={reason.title}
-                  description={reason.description}
-                />
+              <SwiperSlide key={reason.id}>
+                <div className="reason-card">
+                  <ReasonCard
+                    img={reason.img}
+                    title={reason.title}
+                    description={reason.description}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
