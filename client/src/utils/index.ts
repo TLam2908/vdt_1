@@ -39,6 +39,15 @@ import control from "../assets/landing/images/control.png"
 import banner from "../assets/landing/images/banner.jpg"
 import bannerSmall from "../assets/landing/images/banner_small.jpg"
 
+// Reason 
+import reason1 from "../assets/landing/images/reason_1.png"
+import reason2 from "../assets/landing/images/reason_2.png"
+import reason3 from "../assets/landing/images/reason_3.png"
+import reason4 from "../assets/landing/images/reason_4.png"
+import reason5 from "../assets/landing/images/reason_5.png"
+import reason6 from "../assets/landing/images/reason_6.png"
+import reason7 from "../assets/landing/images/reason_7.png"
+
 
 // Export video sources for the hero section
 export const heroVidSrc = heroVid
@@ -80,3 +89,12 @@ export const controlImg = control
 // Export banner image
 export const bannerImg = banner
 export const bannerSmallImg = bannerSmall
+
+// Export reason images
+export const reasonImg1 = reason1
+export const reasonImg2 = reason2
+export const reasonImg3 = reason3
+export const reasonImg4 = reason4
+export const reasonImg5 = reason5
+export const reasonImg6 = reason6
+export const reasonImg7 = reason7

@@ -26,6 +26,16 @@ import {
   controlImg,
 } from ".";
 
+import {
+  reasonImg1,
+  reasonImg2,
+  reasonImg3,
+  reasonImg4,
+  reasonImg5,
+  reasonImg6,
+  reasonImg7,
+} from ".";
+
 export const navLists = [
   "Store",
   "Mac",
@@ -88,6 +98,51 @@ export const features = [
     color: "white",
   },
 ];
+
+export const reasons = [
+  {
+    id: 1,
+    title: "Save with Viettel Trade In",
+    description: "And now thourgh June 30, get extra trade-in credit.",
+    img: reasonImg1,
+  },
+  {
+    id: 2,
+    title: "Pay over time, interest-free",
+    description: "With Viettel Card Monthly Installments.",
+    img: reasonImg2,
+  },
+  {
+    id: 3,
+    title: "Viettel. Your one-stop shop for incredible carrier deals.",
+    description: "Get up to $1000 in credit on a new iPhone with AT&T, Boost Mobile, T‑Mobile, or Verizon.",
+    img: reasonImg3,
+  },
+  {
+    id: 4,
+    title: "Get flexible delivery and setup options",
+    description: "Choose from free delivery, in-store pickup, or same-day delivery in select areas.",
+    img: reasonImg4,
+  },
+  {
+    id: 5,
+    title: "Shop live with an expert",
+    description: "Let us help you find the perfect iPhone for you. Schedule a one-on-one video call with an Apple Specialist.",
+    img: reasonImg5,
+  },
+  {
+    id: 6,
+    title: "John an online Personal Session",
+    description: "Taik a one-on-one video call with an Apple Specialist to get personalized help with your new iPhone.",
+    img: reasonImg6,
+  },
+  {
+    id: 7,
+    title: "Explore a shopping experience like no other",
+    description: "Visit an Viettel   Store to try iPhone, get expert advice, and enjoy personalized service.",
+    img: reasonImg7,
+  }
+]
 
 export const productLanding = [
   {

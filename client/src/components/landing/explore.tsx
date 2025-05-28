@@ -33,6 +33,8 @@ const Explore = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
+          ScrollTrigger.refresh(true);
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -54,7 +56,7 @@ const Explore = () => {
           ease: "power3.out",
         }
       ).fromTo(
-        "#product-item",
+        ".product-item",
         {
           y: 50,
           opacity: 0,
@@ -69,7 +71,7 @@ const Explore = () => {
         "-=0.8"
       );
     },
-    { scope: sectionRef }
+    { scope: sectionRef, dependencies: [isWideScreen, productLanding] }
   );
 
   return (
@@ -90,7 +92,7 @@ const Explore = () => {
         {isWideScreen ? (
           <div className="grid grid-cols-4 gap-5 mt-10">
             {productLanding.map((product: ProductLanding) => (
-              <div id="product-item" key={product.id}>
+              <div className="product-item" key={product.id}>
                 <ProductCard product={product} key={product.id} />
               </div>
             ))}
@@ -114,7 +116,7 @@ const Explore = () => {
             >
               {productLanding.map((product: ProductLanding) => (
                 <SwiperSlide key={product.id} className="w-full h-full">
-                  <div id="product-item">
+                  <div className="product-item">
                     <ProductCard product={product} />
                   </div>
                 </SwiperSlide>

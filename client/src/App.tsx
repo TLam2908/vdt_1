@@ -4,6 +4,7 @@ import Explore from "./components/landing/explore";
 import Feature from "./components/landing/feature";
 import Hero from "./components/landing/hero";
 import Navbar from "./components/landing/navbar";
+import Reason from "./components/landing/reason";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Feature />
       <Explore />
       <Banner />
+      <Reason />
     </div>
   );
 }
