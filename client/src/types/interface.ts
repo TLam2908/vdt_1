@@ -28,3 +28,10 @@ export interface ProductLanding {
         description: string;
     };
 }
+
+export interface SlideProps {
+  title: string;
+  heroSubtitle: string;
+  img: string;
+  color: string
+}

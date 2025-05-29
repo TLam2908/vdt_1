@@ -1,5 +1,5 @@
 
-import type { ProductLanding } from "../types/productLanding";
+import type { ProductLanding } from "../types/interface";
 import { ChevronRight, Minus } from "lucide-react";
 
 const AppleIntelligenceIcon = ({ img }: { img: string }) => {
@@ -66,7 +66,7 @@ const Battery = ({ img, title }: { img: string, title: string }) => {
   )
 }
 
-const ProductCard = ({ product }: { product: ProductLanding }) => {
+const ProductSlide = ({ product }: { product: ProductLanding }) => {
   return (
     <div className="flex flex-col items-center">
       <a>
@@ -145,4 +145,4 @@ const ProductCard = ({ product }: { product: ProductLanding }) => {
   );
 };
 
-export default ProductCard;
+export default ProductSlide;

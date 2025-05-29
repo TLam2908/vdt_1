@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { reasons } from "../../utils/constants";
-import ReasonCard from "../reasonCard";
+import ReasonSlide from "../reasonSlide";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -101,7 +101,7 @@ const Reason = () => {
             {reasons.map((reason) => (
               <SwiperSlide key={reason.id}>
                 <div className="reason-card">
-                  <ReasonCard
+                  <ReasonSlide
                     img={reason.img}
                     title={reason.title}
                     description={reason.description}

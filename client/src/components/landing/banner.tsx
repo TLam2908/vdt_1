@@ -31,8 +31,8 @@ const Banner = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 50%", // Bắt đầu animation khi phần trên của section xuất hiện ở 70% chiều cao viewport
-        toggleActions: "play none none none", // Chạy khi vào view, reset khi ra khỏi view
+        start: "top 70%", // Start when the top of the section is at 50% of the viewport height
+        toggleActions: "play none none none", 
       }
     });
     
@@ -58,7 +58,7 @@ const Banner = () => {
         duration: 1, 
         ease: "power3.out" 
       },
-      "-=0.8" // Overlap với animation trước
+      "-=0.8" // Overlap with the image animation
     )
     
     // Text animation

@@ -115,34 +115,39 @@ export const reasons = [
   {
     id: 3,
     title: "Viettel. Your one-stop shop for incredible carrier deals.",
-    description: "Get up to $1000 in credit on a new iPhone with AT&T, Boost Mobile, T‑Mobile, or Verizon.",
+    description:
+      "Get up to $1000 in credit on a new iPhone with AT&T, Boost Mobile, T‑Mobile, or Verizon.",
     img: reasonImg3,
   },
   {
     id: 4,
     title: "Get flexible delivery and setup options",
-    description: "Choose from free delivery, in-store pickup, or same-day delivery in select areas.",
+    description:
+      "Choose from free delivery, in-store pickup, or same-day delivery in select areas.",
     img: reasonImg4,
   },
   {
     id: 5,
     title: "Shop live with an expert",
-    description: "Let us help you find the perfect iPhone for you. Schedule a one-on-one video call with an Apple Specialist.",
+    description:
+      "Let us help you find the perfect iPhone for you. Schedule a one-on-one video call with an Apple Specialist.",
     img: reasonImg5,
   },
   {
     id: 6,
     title: "John an online Personal Session",
-    description: "Taik a one-on-one video call with an Apple Specialist to get personalized help with your new iPhone.",
+    description:
+      "Taik a one-on-one video call with an Apple Specialist to get personalized help with your new iPhone.",
     img: reasonImg6,
   },
   {
     id: 7,
     title: "Explore a shopping experience like no other",
-    description: "Visit an Viettel   Store to try iPhone, get expert advice, and enjoy personalized service.",
+    description:
+      "Visit an Viettel   Store to try iPhone, get expert advice, and enjoy personalized service.",
     img: reasonImg7,
-  }
-]
+  },
+];
 
 export const productLanding = [
   {
@@ -245,28 +250,129 @@ export const productLanding = [
     battery: {
       image: batteryImg,
       description: "Up to 26 hours video playback",
-    }
-  },
-  {
-    id: 4,
-    name: "iPhone 15",
-    tagline: "As amazing as ever.",
-    price: "$699",
-    monthlyPrice: "$29.12/month. For 24 months",
-    colors: ["#ebd0d2", "#ece6c6", "#cfd9c9", "#d5dde0", "#3c4042"],
-    image: ip15Img,
-    chip: {
-      image: a16Img,
-      title: "A16 chip with 5-core GPU",
     },
-    cameraSystem: {
-      image: cam15Img,
-      type: "Dual-camera system",
-      details: ["48MP Main camera", "2x Telephoto", "Ultra Wide camera", ""],
-    },
-    battery: {
-      image: batteryImg,
-      description: "Up to 26 hours video playback",
-    }
   },
+  // {
+  //   id: 4,
+  //   name: "iPhone 15",
+  //   tagline: "As amazing as ever.",
+  //   price: "$699",
+  //   monthlyPrice: "$29.12/month. For 24 months",
+  //   colors: ["#ebd0d2", "#ece6c6", "#cfd9c9", "#d5dde0", "#3c4042"],
+  //   image: ip15Img,
+  //   chip: {
+  //     image: a16Img,
+  //     title: "A16 chip with 5-core GPU",
+  //   },
+  //   cameraSystem: {
+  //     image: cam15Img,
+  //     type: "Dual-camera system",
+  //     details: ["48MP Main camera", "2x Telephoto", "Ultra Wide camera", ""],
+  //   },
+  //   battery: {
+  //     image: batteryImg,
+  //     description: "Up to 26 hours video playback",
+  //   }
+  // },
 ];
+
+export const infomationData = {
+  "Explore iPhone": [
+    "Explore All iPhone",
+    "iPhone 16 Pro",
+    "iPhone 16",
+    "iPhone 16e",
+    "iPhone 15",
+    "",
+    "Compare iPhone",
+    "Switch from Android",
+  ],
+  "Shop iPhone": [
+    "Shop iPhone",
+    "iPhone Accessories",
+    "Apple Trade In",
+    "Carrier Deals at Apple",
+    "Financing",
+  ],
+  "More from iPhone": [
+    "iPhone Support",
+    "AppleCare+ for iPhone",
+    "iOS 18",
+    "Apple Intelligence",
+    "Apps by Apple",
+    "iPhone Privacy",
+    "iCloud+",
+    "Wallet, Pay, Card",
+    "Siri",
+  ],
+};
+
+export const footerData = {
+  "Shop and Learn": [
+    "Store",
+    "Mac",
+    "iPad",
+    "iPhone",
+    "Watch",
+    "Vision",
+    "AirPods",
+    "TV & Home",
+    "AirTag",
+    "Accessories",
+    "Gift Cards",
+  ],
+  "Apple Wallet": ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"],
+  Account: ["Manage Your Apple Account", "Apple Store Account", "iCloud.com"],
+  Entertainment: [
+    "Apple One",
+    "Apple TV+",
+    "Apple Music",
+    "Apple Arcade",
+    "Apple Fitness+",
+    "Apple News+",
+    "Apple Podcasts",
+    "Apple Books",
+    "App Store",
+  ],
+  "Apple Store": [
+    "Find a Store",
+    "Genius Bar",
+    "Today at Apple",
+    "Group Reservations",
+    "Apple Camp",
+    "Apple Store App",
+    "Certified Refurbished",
+    "Apple Trade In",
+    "Financing",
+    "Carrier Deals at Apple",
+    "Order Status",
+    "Shopping Help",
+  ],
+  "For Business": ["Apple and Business", "Shop for Business"],
+  "For Education": ["Apple and Education", "Shop for K-12", "Shop for College"],
+  "For Healthcare": [
+    "Apple in Healthcare",
+    "Mac in Healthcare",
+    "Health on Apple Watch",
+    "Health Records on iPhone and iPad",
+  ],
+  "For Government": ["Shop for Government", "Shop for Veterans and Military"],
+  "Apple Values": [
+    "Accessibility",
+    "Education",
+    "Environment",
+    "Inclusion and Diversity",
+    "Privacy",
+    "Racial Equity and Justice",
+    "Supply Chain",
+  ],
+  "About Apple": [
+    "Newsroom",
+    "Apple Leadership",
+    "Career Opportunities",
+    "Investors",
+    "Ethics & Compliance",
+    "Events",
+    "Contact Apple",
+  ],
+};

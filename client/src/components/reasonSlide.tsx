@@ -1,6 +1,6 @@
 import { Plus } from "lucide-react"
 
-const ReasonCard = ({
+const ReasonSlide = ({
   img,
   title,
   description,
@@ -40,4 +40,4 @@ const ReasonCard = ({
   );
 };
 
-export default ReasonCard;
+export default ReasonSlide;

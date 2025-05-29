@@ -1,9 +1,4 @@
-interface SlideProps {
-  title: string;
-  heroSubtitle: string;
-  img: string;
-  color: string
-}
+import type { SlideProps } from "../types/interface";
 
 const Slide = ({ title, heroSubtitle, img, color }: SlideProps) => {
   // Xác định màu chữ dựa trên prop color

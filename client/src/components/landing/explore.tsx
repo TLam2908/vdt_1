@@ -1,7 +1,7 @@
 import Title from "./../title";
 import { productLanding } from "../../utils/constants";
-import type { ProductLanding } from "../../types/productLanding";
-import ProductCard from "./../productCard";
+import type { ProductLanding } from "../../types/interface";
+import ProductCard from "../productSlide";
 
 import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,7 @@ import { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProductSlide from "../productSlide";
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore = () => {
@@ -90,10 +91,10 @@ const Explore = () => {
           </a>
         </div>
         {isWideScreen ? (
-          <div className="grid grid-cols-4 gap-5 mt-10">
+          <div className="grid grid-cols-3 gap-5 mt-10">
             {productLanding.map((product: ProductLanding) => (
               <div className="product-item" key={product.id}>
-                <ProductCard product={product} key={product.id} />
+                <ProductSlide product={product} key={product.id} />
               </div>
             ))}
           </div>

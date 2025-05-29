@@ -1,3 +1,4 @@
+
 // Hero Video
 import heroVid from "../assets/landing/videos/xlarge.mp4"
 import heroVidLag from "../assets/landing/videos/large.mp4"
@@ -8,45 +9,52 @@ import heroVidSmall from "../assets/landing/videos/small.mp4"
 import apple from "../assets/landing/images/appleBlack.png"
 
 // Feature Image
-import feature1 from "../assets/landing/images/slider_1_xlarge.jpg"
-import feature2 from "../assets/landing/images/slider_2.jpg"
-import feature3 from "../assets/landing/images/slider_3.jpg"
-import feature4 from "../assets/landing/images/slider_4.jpg"
-import feature5 from "../assets/landing/images/slider_5.jpg"
-import feature6 from "../assets/landing/images/slider_6.jpg"
-import feature7 from "../assets/landing/images/slider_7.jpg"
-import feature8 from "../assets/landing/images/slider_8.jpg"
+import feature1 from "../assets/landing/images/feature/slider_1_xlarge.jpg"
+import feature2 from "../assets/landing/images/feature/slider_2.jpg"
+import feature3 from "../assets/landing/images/feature/slider_3.jpg"
+import feature4 from "../assets/landing/images/feature/slider_4.jpg"
+import feature5 from "../assets/landing/images/feature/slider_5.jpg"
+import feature6 from "../assets/landing/images/feature/slider_6.jpg"
+import feature7 from "../assets/landing/images/feature/slider_7.jpg"
+import feature8 from "../assets/landing/images/feature/slider_8.jpg"
 
 //Product Landing Image
-import ip16pro from "../assets/landing/images/16pro.png"
-import ip16 from "../assets/landing/images/16.png"
-import ip16e from "../assets/landing/images/16e.png"
-import ip15 from "../assets/landing/images/15.png"
+import ip16pro from "../assets/landing/images/specification/16pro.png"
+import ip16 from "../assets/landing/images/specification/16.png"
+import ip16e from "../assets/landing/images/specification/16e.png"
+import ip15 from "../assets/landing/images/specification/15.png"
 
 //Product specification images
-import a18 from "../assets/landing/images/a18.png"
-import a18pro from "../assets/landing/images/a18pro.png"
-import a16 from "../assets/landing/images/a16.png"
-import battery from "../assets/landing/images/battery.png"
-import cam16pro from "../assets/landing/images/procam.png"
-import cam16 from "../assets/landing/images/dualcam.png"
-import cam16e from "../assets/landing/images/21cam.png"
-import cam15 from "../assets/landing/images/dualcam15.png"
-import appleIntelligence from "../assets/landing/images/apple_intell.png"
-import control from "../assets/landing/images/control.png"
+import a18 from "../assets/landing/images/specification/a18.png"
+import a18pro from "../assets/landing/images/specification/a18pro.png"
+import a16 from "../assets/landing/images/specification/a16.png"
+import battery from "../assets/landing/images/specification/battery.png"
+import cam16pro from "../assets/landing/images/specification/procam.png"
+import cam16 from "../assets/landing/images/specification/dualcam.png"
+import cam16e from "../assets/landing/images/specification/21cam.png"
+import cam15 from "../assets/landing/images/specification/dualcam15.png"
+import appleIntelligence from "../assets/landing/images/specification/apple_intell.png"
+import control from "../assets/landing/images/specification/control.png"
 
 // Banner 
-import banner from "../assets/landing/images/banner.jpg"
-import bannerSmall from "../assets/landing/images/banner_small.jpg"
+import banner from "../assets/landing/images/banner/banner.jpg"
+import bannerSmall from "../assets/landing/images/banner/banner_small.jpg"
 
 // Reason 
-import reason1 from "../assets/landing/images/reason_1.png"
-import reason2 from "../assets/landing/images/reason_2.png"
-import reason3 from "../assets/landing/images/reason_3.png"
-import reason4 from "../assets/landing/images/reason_4.png"
-import reason5 from "../assets/landing/images/reason_5.png"
-import reason6 from "../assets/landing/images/reason_6.png"
-import reason7 from "../assets/landing/images/reason_7.png"
+import reason1 from "../assets/landing/images/reason/reason_1.png"
+import reason2 from "../assets/landing/images/reason/reason_2.png"
+import reason3 from "../assets/landing/images/reason/reason_3.png"
+import reason4 from "../assets/landing/images/reason/reason_4.png"
+import reason5 from "../assets/landing/images/reason/reason_5.png"
+import reason6 from "../assets/landing/images/reason/reason_6.png"
+import reason7 from "../assets/landing/images/reason/reason_7.png"
+
+// assessory images
+import accessory1 from "../assets/landing/images/accessory/asses_1.jpg"
+import accessory2 from "../assets/landing/images/accessory/asses_2.jpg"
+
+import accessory1Small from "../assets/landing/images/accessory/asses_1_small.jpg"
+import accessory2Small from "../assets/landing/images/accessory/asses_2_small.jpg"
 
 
 // Export video sources for the hero section
@@ -98,3 +106,9 @@ export const reasonImg4 = reason4
 export const reasonImg5 = reason5
 export const reasonImg6 = reason6
 export const reasonImg7 = reason7
+
+// Export assessory images
+export const assessoryImg1 = accessory1
+export const assessoryImg2 = accessory2
+export const assessoryImg1Small = accessory1Small
+export const assessoryImg2Small = accessory2Small
