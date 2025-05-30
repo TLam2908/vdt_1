@@ -1,7 +1,8 @@
 import Title from "./../title";
 import { productLanding } from "../../utils/constants";
 import type { ProductLanding } from "../../types/interface";
-import ProductCard from "../productSlide";
+import ProductCard from "./productSlide";
+import ProductSlide from "./productSlide";
 
 import { Navigation, Pagination, Autoplay, Mousewheel } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +15,6 @@ import { useRef, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ProductSlide from "../productSlide";
 gsap.registerPlugin(ScrollTrigger);
 
 const Explore = () => {

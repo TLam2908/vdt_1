@@ -3,7 +3,7 @@ import Banner from "../components/landing/banner";
 import Explore from "../components/landing/explore";
 import Feature from "../components/landing/feature";
 import Hero from "../components/landing/hero";
-import Navbar from "../components/landing/navbar";
+import Navbar from "../components/navbar";
 import Reason from "../components/landing/reason";
 import Information from "../components/landing/information";
 import Footer from "../components/footer";

@@ -1,6 +1,6 @@
-import type { SlideProps } from "../types/interface";
+import type { SlideProps } from "../../types/interface";
 
-const Slide = ({ title, heroSubtitle, img, color }: SlideProps) => {
+const FeatureSlide = ({ title, heroSubtitle, img, color }: SlideProps) => {
   // Xác định màu chữ dựa trên prop color
   const textColorClass = color === 'white' ? 'text-white' : 'text-black';
 
@@ -25,4 +25,4 @@ const Slide = ({ title, heroSubtitle, img, color }: SlideProps) => {
   );
 };
 
-export default Slide;
+export default FeatureSlide;

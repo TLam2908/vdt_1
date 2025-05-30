@@ -1,5 +1,5 @@
-import { features } from "../utils/constants";
-import Slide from "./slide";
+import { features } from "../../utils/constants";
+import FeatureSlide from "./featureSlide";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,7 +15,7 @@ import "swiper/css/mousewheel";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Slider: React.FC = () => {
+const FeatureSlider: React.FC = () => {
 
   useGSAP(() => {
     // Animation cho từng slide
@@ -72,7 +72,7 @@ const Slider: React.FC = () => {
         {features.map((feature, index) => (
           <SwiperSlide key={index} className="w-full h-full">
             <div className="slide-item">
-              <Slide
+              <FeatureSlide
                 title={feature.title}
                 heroSubtitle={feature.subtitle}
                 img={feature.img}
@@ -86,4 +86,4 @@ const Slider: React.FC = () => {
   );
 };
 
-export default Slider;
+export default FeatureSlider;

@@ -1,5 +1,5 @@
 
-import type { ProductLanding } from "../types/interface";
+import type { ProductLanding } from "../../types/interface";
 import { ChevronRight, Minus } from "lucide-react";
 
 const AppleIntelligenceIcon = ({ img }: { img: string }) => {

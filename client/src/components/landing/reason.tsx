@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { reasons } from "../../utils/constants";
-import ReasonSlide from "../reasonSlide";
+import ReasonSlide from "./reasonSlide";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
