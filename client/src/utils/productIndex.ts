@@ -2,14 +2,14 @@
 
 import hero16 from "../assets/product/hero/ip16/hero.png";
 import hero16Text from "../assets/product/hero/ip16/hero_text.png";
-import hero16Small from "../assets/product/hero/ip16/hero_small.png";
+import hero16Small from "../assets/product/hero/ip16/hero_xsmall.png";
 import hero16TextSmall from "../assets/product/hero/ip16/hero_text_small.png";
-import hero16Pro from "../assets/product/hero/ip16pro/hero.png";
+import hero16Pro from "../assets/product/hero/ip16pro/hero.jpg";
 import hero16ProText from "../assets/product/hero/ip16pro/hero_text.png";
-import hero16ProSmall from "../assets/product/hero/ip16pro/hero_small.png";
+import hero16ProSmall from "../assets/product/hero/ip16pro/hero_small.jpg";
 import hero16ProTextSmall from "../assets/product/hero/ip16pro/hero_text_small.png";
-import hero16e from "../assets/product/hero/ip16e/hero.png";
-import hero16eSmall from "../assets/product/hero/ip16e/hero_small.png";
+import hero16e from "../assets/product/hero/ip16e/hero.jpg";
+import hero16eSmall from "../assets/product/hero/ip16e/hero_small.jpg";
 
 export const productHeroImages = {
   ip16: {

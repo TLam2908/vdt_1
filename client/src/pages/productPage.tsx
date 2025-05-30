@@ -1,13 +1,23 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+
+import { productDetails } from "../utils/productConstants";
+import Navbar from "../components/navbar";
+import HeroProduct from "../components/product/heroProduct";
 
 const ProductPage = () => {
-    const { productId } = useParams<{ productId: string }>();
-    return (
-        <div>
-            <h1>Product Page</h1>
-            <p>This is the product page where you can find details about our products.</p>
-        </div>
-    )
-}
+  const { productId } = useParams<{ productId: string }>();
+  const productData = productDetails.find(
+    (product) => product.id === parseInt(productId || "0")
+  );
 
-export default ProductPage; 
+  return (
+    <div className="max-w-[2560px]">
+      <Navbar />
+      {productData?.hero && (
+        <HeroProduct props={{ ...productData.hero, id: parseInt(productId || "0") }} />
+      )}
+    </div>
+  );
+};
+
+export default ProductPage;

@@ -35,3 +35,12 @@ export interface SlideProps {
   img: string;
   color: string
 }
+
+export interface ProductHeroProps {
+    id: number;
+    hero: string;
+    text?: string;
+    small: string;
+    textSmall?: string;
+}
+
