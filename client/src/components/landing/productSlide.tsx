@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import type { ProductLanding } from "../../types/interface";
 import { ChevronRight, Minus } from "lucide-react";
 
@@ -57,25 +57,25 @@ const CameraSystem = ({
   );
 };
 
-const Battery = ({ img, title }: { img: string, title: string }) => {
+const Battery = ({ img, title }: { img: string; title: string }) => {
   return (
     <div className="flex flex-col items-center gap-3">
       <img src={img} alt={title} className="w-11 h-14" />
       <span className="text-sm text-gray-700">{title}</span>
     </div>
-  )
-}
+  );
+};
 
 const ProductSlide = ({ product }: { product: ProductLanding }) => {
   return (
     <div className="flex flex-col items-center">
-      <a>
+      <Link to={`/product/${product.id}`} className="mb-5">
         <img
           src={product.image}
           alt={product.name}
           className="object-fit w-[240px] h-[340px] transition-transform duration-300 hover:scale-105"
         />
-      </a>
+      </Link>
       <div className="flex justify-center gap-2 pt-10">
         {product.colors.map((color, index) => (
           <div
@@ -91,9 +91,12 @@ const ProductSlide = ({ product }: { product: ProductLanding }) => {
         From {product.price} or {product.monthlyPrice}
       </p>
       <div className="flex items-center gap-5">
-        <button className=" bg-[#0076df] text-white px-4 py-2 rounded-full hover:bg-[#0066c0] transition-colors duration-300">
-          Learn more
-        </button>
+        <Link to={`/product/${product.id}`}>
+          <button className=" bg-[#0076df] text-white px-4 py-2 rounded-full hover:bg-[#0066c0] transition-colors duration-300">
+            Learn more
+          </button>
+        </Link>
+
         <button className="text-[#0076df] flex items-center">
           Buy <ChevronRight className="w-4 h-4 ml-1 mt-1" />
         </button>
@@ -135,7 +138,10 @@ const ProductSlide = ({ product }: { product: ProductLanding }) => {
 
         <div className="flex flex-col items-center gap-2">
           {product.battery ? (
-            <Battery img={product.battery.image} title={product.battery.description} />
+            <Battery
+              img={product.battery.image}
+              title={product.battery.description}
+            />
           ) : (
             <Minus className="w-7 h-7 mb-15 text-black" />
           )}

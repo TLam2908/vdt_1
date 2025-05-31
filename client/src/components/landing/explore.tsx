@@ -22,19 +22,19 @@ const Explore = () => {
   useEffect(() => {
     const checkScreenWidth = () => {
       setIsWideScreen(window.innerWidth > 1536);
-    }
+    };
     checkScreenWidth();
 
     window.addEventListener("resize", checkScreenWidth);
     return () => {
       window.removeEventListener("resize", checkScreenWidth);
-    }
-  }, [])
+    };
+  }, []);
 
   const sectionRef = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-          ScrollTrigger.refresh(true);
+      ScrollTrigger.refresh(true);
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -117,9 +117,7 @@ const Explore = () => {
             >
               {productLanding.map((product: ProductLanding) => (
                 <SwiperSlide key={product.id} className="w-full h-full">
-                  <div className="product-item">
-                    <ProductCard product={product} />
-                  </div>
+                  <ProductCard product={product} />
                 </SwiperSlide>
               ))}
             </Swiper>

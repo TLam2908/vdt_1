@@ -195,7 +195,7 @@ const IPhone16Pro = ({
   }, []);
   return (
   <div className="flex flex-col items-center justify-center w-full min-h-screen bg-black text-white relative overflow-hidden">
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center h-full">
       <div className="relative w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] max-w-[1200px] mt-16">
         <img
           src={heroImgSrc}

@@ -44,3 +44,14 @@ export interface ProductHeroProps {
     textSmall?: string;
 }
 
+export interface ProductDetails {
+
+}
+
+export interface ProductHighlights {
+    title: string[];
+    images: {
+        large: string;
+        small: string;
+    }
+}

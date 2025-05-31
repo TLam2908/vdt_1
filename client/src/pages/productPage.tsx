@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { productDetails } from "../utils/productConstants";
 import Navbar from "../components/navbar";
 import HeroProduct from "../components/product/heroProduct";
+import HighlightProduct from "../components/product/heroHighlight";
 
 const ProductPage = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -16,6 +17,7 @@ const ProductPage = () => {
       {productData?.hero && (
         <HeroProduct props={{ ...productData.hero, id: parseInt(productId || "0") }} />
       )}
+      <HighlightProduct props={productData?.highlights || []}/>
     </div>
   );
 };

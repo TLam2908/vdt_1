@@ -151,7 +151,7 @@ export const reasons = [
 
 export const productLanding = [
   {
-    id: 1,
+    id: 3,
     name: "iPhone 16 Pro",
     tagline: "The ultimate iPhone.",
     price: "$999",
@@ -187,7 +187,7 @@ export const productLanding = [
   },
 
   {
-    id: 2,
+    id: 1,
     name: "iPhone 16",
     tagline: "A total powerhouse.",
     price: "$799",
@@ -222,7 +222,7 @@ export const productLanding = [
     },
   },
   {
-    id: 3,
+    id: 2,
     name: "iPhone 16e",
     tagline: "Latest iPhone. Greatest price.",
     price: "$599",
