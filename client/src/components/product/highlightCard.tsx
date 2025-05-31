@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 
 const HighlightCard = ({ props }: { props: ProductHighlights }) => {
   const [imgSrc, setImgSrc] = useState(
-    window.innerWidth > 1280 ? props.images.large : props.images.small 
+    window.innerWidth > 1280 ? props.images.large : props.images.small
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setImgSrc(window.innerWidth > 1280 ? props.images.large : props.images.small);
+      setImgSrc(
+        window.innerWidth > 1280 ? props.images.large : props.images.small
+      );
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -19,10 +21,21 @@ const HighlightCard = ({ props }: { props: ProductHighlights }) => {
   return (
     <div className="group cursor-pointer">
       <div className="relative overflow-hidden rounded-2xl shadow-lg">
-        <img
-          src={imgSrc}
-          className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover transition-all duration-500 group-hover:scale-110"
-        />
+        {props.video ? (
+          <video
+            className="w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] object-cover transition-all duration-500 group-hover:scale-110"
+            src={props.video}
+            autoPlay
+            loop
+            muted
+          />
+        ) : (
+          <img
+            src={imgSrc}
+            alt={props.title.join(" ")}
+            className="w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] object-cover transition-all duration-500 group-hover:scale-110"
+          />
+        )}
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -35,7 +48,7 @@ const HighlightCard = ({ props }: { props: ProductHighlights }) => {
               {title}
             </h3>
           ))}
-          <p className="text-md opacity-90 line-clamp-2 mt-2 text-gray-300">
+          <p className="text-md max-md:hidden opacity-90 line-clamp-2 mt-2 text-gray-300">
             Discover the innovative features that make this product
             extraordinary.
           </p>

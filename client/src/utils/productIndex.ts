@@ -41,6 +41,8 @@ import highlight16_2_small from "../assets/product/highlight/ip16/2/small.jpg";
 import highlight16_3_small from "../assets/product/highlight/ip16/3/small.jpg";
 import highlight16_4_small from "../assets/product/highlight/ip16/4/small.jpg";
 import highlight16_5_small from "../assets/product/highlight/ip16/5/small.jpg";
+import vid16_1 from "../assets/product/highlight/ip16/1/xlarge.mp4";
+import vid16_2 from "../assets/product/highlight/ip16/2/xlarge.mp4";
 
 import highlight16Pro_1 from "../assets/product/highlight/ip16pro/1/xlarge.jpg";
 import highlight16Pro_2 from "../assets/product/highlight/ip16pro/2/xlarge.jpg";
@@ -54,6 +56,10 @@ import highlight16Pro_3_small from "../assets/product/highlight/ip16pro/3/small.
 import highlight16Pro_4_small from "../assets/product/highlight/ip16pro/4/small.jpg";
 import highlight16Pro_5_small from "../assets/product/highlight/ip16pro/5/small.jpg";
 import highlight16Pro_6_small from "../assets/product/highlight/ip16pro/6/small.jpg";
+import vid16Pro_1 from "../assets/product/highlight/ip16pro/1/xlarge.mp4";
+import vid16Pro_2 from "../assets/product/highlight/ip16pro/2/xlarge.mp4";
+import vid16Pro_3 from "../assets/product/highlight/ip16pro/3/xlarge.mp4";
+import vid16Pro_5 from "../assets/product/highlight/ip16pro/5/xlarge.mp4";
 
 import highlight16e_1 from "../assets/product/highlight/ip16e/1/xlarge.jpg";
 import highlight16e_2 from "../assets/product/highlight/ip16e/2/xlarge.jpg";
@@ -65,10 +71,16 @@ import highlight16e_2_small from "../assets/product/highlight/ip16e/2/small.jpg"
 import highlight16e_3_small from "../assets/product/highlight/ip16e/3/small.jpg";
 import highlight16e_4_small from "../assets/product/highlight/ip16e/4/small.jpg";
 import highlight16e_5_small from "../assets/product/highlight/ip16e/5/small.jpg";
+import vid16e_1 from "../assets/product/highlight/ip16e/1/xlarge.mp4";
+import vid16e_2 from "../assets/product/highlight/ip16e/2/xlarge.mp4";
+import vid16e_3 from "../assets/product/highlight/ip16e/3/xlarge.mp4";
+import vid16e_4 from "../assets/product/highlight/ip16e/4/xlarge.mp4";
+import vid16e_5 from "../assets/product/highlight/ip16e/5/xlarge.mp4";
 
 export const productHighlightImages = {
   ip16: [
     {
+      id: 1,
       title: [
         "The first iPhone built",
         "for Apple Intelligence.",
@@ -78,8 +90,11 @@ export const productHighlightImages = {
         large: highlight16_1,
         small: highlight16_1_small,
       },
+      video: vid16_1,
+      videoDuration: 5, // Duration in seconds
     },
     {
+      id: 2,
       title: [
         "Camera Control.",
         "Get the perfect photo.",
@@ -90,8 +105,11 @@ export const productHighlightImages = {
         large: highlight16_2,
         small: highlight16_2_small,
       },
+      video: vid16_2,
+      videoDuration: 3,
     },
     {
+      id: 3,
       title: ["The all-new chip that empowers Apple Intelligence.", "And you."],
       images: {
         large: highlight16_3,
@@ -99,6 +117,7 @@ export const productHighlightImages = {
       },
     },
     {
+      id: 4,
       title: ["A big boost in battery life?", "Yes, please."],
       images: {
         large: highlight16_4,
@@ -106,6 +125,7 @@ export const productHighlightImages = {
       },
     },
     {
+      id: 5,
       title: [
         "New Ultra Wide camera.",
         "Take your photos further.",
@@ -119,6 +139,7 @@ export const productHighlightImages = {
   ],
   ip16Pro: [
     {
+      id: 1,
       title: [
         "The first iPhone built",
         "for Apple Intelligence.",
@@ -128,8 +149,11 @@ export const productHighlightImages = {
         large: highlight16Pro_1,
         small: highlight16Pro_1_small,
       },
+      video: vid16Pro_1,
+      videoDuration: 5, // Duration in seconds
     },
     {
+      id: 2,
       title: [
         "So fast. So fluid.",
         "Get a feel for the all-new.",
@@ -139,8 +163,11 @@ export const productHighlightImages = {
         large: highlight16Pro_2,
         small: highlight16Pro_2_small,
       },
+      video: vid16Pro_2,
+      videoDuration: 5,
     },
     {
+      id: 3,
       title: [
         "4K 120 fps Dolby Vision.",
         "4 studio-quality mics.",
@@ -150,8 +177,11 @@ export const productHighlightImages = {
         large: highlight16Pro_3,
         small: highlight16Pro_3_small,
       },
+      video: vid16Pro_3,
+      videoDuration: 5,
     },
     {
+      id: 4,
       title: [
         "Our thinnest borders yet — for",
         "even larger displays. Brilliant.",
@@ -162,6 +192,7 @@ export const productHighlightImages = {
       },
     },
     {
+      id: 5,
       title: [
         "All-new A18 Pro chip powers",
         "unrivaled intelligence. And",
@@ -171,8 +202,11 @@ export const productHighlightImages = {
         large: highlight16Pro_5,
         small: highlight16Pro_5_small,
       },
+      video: vid16Pro_5,
+      videoDuration: 5,
     },
     {
+      id: 6,
       title: ["A huge leap in battery life.", "Game on."],
       images: {
         large: highlight16Pro_6,
@@ -182,13 +216,17 @@ export const productHighlightImages = {
   ],
   ip16e: [
     {
+      id: 1,
       title: ["Beautiful, durable design.", "Built to last."],
       images: {
         large: highlight16e_1,
         small: highlight16e_1_small,
       },
+      video: vid16e_1,
+      videoDuration: 3, // Duration in seconds
     },
     {
+      id: 2,
       title: [
         "Built for Apple Intelligence",
         "Powered by A18, the latest‑generation chip.",
@@ -197,28 +235,39 @@ export const productHighlightImages = {
         large: highlight16e_2,
         small: highlight16e_2_small,
       },
+      video: vid16e_2,
+      videoDuration: 5, // Duration in seconds
     },
     {
+      id: 3,
       title: ["Supersized battery life.", "Up to 26 hours of video playback."],
       images: {
         large: highlight16e_3,
         small: highlight16e_3_small,
       },
+      video: vid16e_3,
+      videoDuration: 4, // Duration in seconds
     },
     {
+      id: 4,
       title: ["48MP Fusion camera.", "All you need.", "For all you shoot."],
-        images: {
-            large: highlight16e_4,
-            small: highlight16e_4_small,
-        },
+      images: {
+        large: highlight16e_4,
+        small: highlight16e_4_small,
+      },
+      video: vid16e_4,
+      videoDuration: 3, // Duration in seconds
     },
     {
-        title: ["iOS 18. Customize. Stylize.", "Mesmerize."],
-        images: {
-            large: highlight16e_5,
-            small: highlight16e_5_small,
-        },
-    }
+      id: 5,
+      title: ["iOS 18. Customize. Stylize.", "Mesmerize."],
+      images: {
+        large: highlight16e_5,
+        small: highlight16e_5_small,
+      },
+      video: vid16e_5,
+      videoDuration: 3, // Duration in seconds
+    },
   ],
 };
 
@@ -242,67 +291,69 @@ import detail16e_5 from "../assets/product/detail/ip16e/5/xlarge.jpg";
 export const productDetailImages = {
   ip16: [
     {
-        title: "Click to launch the Camera app. Click again to instantly take a photo.",
-        image: detail16_1,
-    }, 
-    {
-        title: "Click and hold to start recording video.",
-        image: detail16_2,
+      title:
+        "Click to launch the Camera app. Click again to instantly take a photo.",
+      image: detail16_1,
     },
     {
-        title: "A light press opens controls like zoom.",
-        image: detail16_3,
+      title: "Click and hold to start recording video.",
+      image: detail16_2,
     },
     {
-        title: "With a double light press, you can select another camera setting.",
-        image: detail16_4,
-    }
+      title: "A light press opens controls like zoom.",
+      image: detail16_3,
+    },
+    {
+      title:
+        "With a double light press, you can select another camera setting.",
+      image: detail16_4,
+    },
   ],
   ip16Pro: [
     {
-        title: "iPhone 16 Pro Max has our largest iPhone display ever.",
-        image: detail16Pro_1,
+      title: "iPhone 16 Pro Max has our largest iPhone display ever.",
+      image: detail16Pro_1,
     },
     {
-        title: "The thinnest borders on any Apple product",
-        image: detail16Pro_2,
+      title: "The thinnest borders on any Apple product",
+      image: detail16Pro_2,
     },
     {
-        title: "Premium Grade 5 titanium is exceptionally durable",
-        image: detail16Pro_3,
+      title: "Premium Grade 5 titanium is exceptionally durable",
+      image: detail16Pro_3,
     },
     {
-        title: "Four striking colors, from Black Titanium to new Desert Titanium",
-        image: detail16Pro_4,
-    }
+      title: "Four striking colors, from Black Titanium to new Desert Titanium",
+      image: detail16Pro_4,
+    },
   ],
   ip16e: [
     {
-        title: "Tougher than any smartphone glass.",
-        subTitle: "Ceramic Shield",
-        image: detail16e_1,
+      title: "Tougher than any smartphone glass.",
+      subTitle: "Ceramic Shield",
+      image: detail16e_1,
     },
     {
-        title: "A fast track to your favorite feature.",
-        subTitle: "Action Button",
-        image: detail16e_2,
+      title: "A fast track to your favorite feature.",
+      subTitle: "Action Button",
+      image: detail16e_2,
     },
     {
-        title: "One. For all.",
-        subTitle: "USB-C",
-        image: detail16e_3,
+      title: "One. For all.",
+      subTitle: "USB-C",
+      image: detail16e_3,
     },
     {
-        title: "Put your best face forward.",
-        subTitle: "Face ID",
-        image: detail16e_4,
+      title: "Put your best face forward.",
+      subTitle: "Face ID",
+      image: detail16e_4,
     },
     {
-        title: "Colors? We’ve got you covered.",
-        subTitle: "Color",
-        image: detail16e_5,
-    }
-  ]
+      title: "Colors? We’ve got you covered.",
+      subTitle: "Color",
+      image: detail16e_5,
+    },
+  ],
 };
 
 // List of iPhone models
@@ -420,3 +471,55 @@ export const productVisualImages = {
   ip16Pro: visual16pro,
   ip16e: visual16e,
 };
+
+export const productModels = {
+  ip16: [
+    {
+      title: "iPhone 16 in Ultramarine", 
+      color: "#94a5eb",
+      search: "Ultramarine"
+    },
+    {
+      title: "iPhone 16 in Teal",
+      color: "#abcfcd",
+      search: "Teal"
+    },
+    {
+      title: "iPhone 16 in Black",
+      color: "#35393b",
+      search: "Black"
+    },
+    {
+      title: "iPhone 16 in White",
+      color: "#f1f1f1",
+      search: "White"
+    },
+    {
+      title: "iPhone 16 in Pink",
+      color: "#eda8d5",
+      search: "Pink"
+    }
+  ],
+  ip16Pro: [
+    {
+      title: "iPhone 16 Pro in Black Titanium",
+      color: "#3c3c3d",
+      search: "Pro Black"
+    },
+    {
+      title: "iPhone 16 Pro in White Titanium",
+      color: "#f0efee",
+      search: "Pro White"
+    },
+    {
+      title: "iPhone 16 Pro in Desert Titanium",
+      color: "#bfa48f",
+      search: "Pro Desert"
+    },
+    {
+      title: "iPhone 16 Pro in Natural Titanium",
+      color: "#c2bcb2",
+      search: "Pro Natural"
+    }
+  ],
+}

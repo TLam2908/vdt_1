@@ -1,4 +1,6 @@
-export interface ProductLanding {
+import * as Three from "three";
+
+export type ProductLanding = {
     id: number;
     name: string;
     tagline: string;
@@ -29,14 +31,14 @@ export interface ProductLanding {
     };
 }
 
-export interface SlideProps {
+export type SlideProps = {
   title: string;
   heroSubtitle: string;
   img: string;
   color: string
 }
 
-export interface ProductHeroProps {
+export type ProductHeroProps = {
     id: number;
     hero: string;
     text?: string;
@@ -48,10 +50,28 @@ export interface ProductDetails {
 
 }
 
-export interface ProductHighlights {
+export type ProductHighlights = {
+    id: number;
     title: string[];
     images: {
         large: string;
         small: string;
     }
+    video?: string;
+    videoDuration?: number;
+}
+
+export type ModelViewProps = {
+  index: number;
+  groupRef: React.RefObject<Three.Group>;
+  gsapType: string;
+  controlRef: React.RefObject<any>;
+  setRotation: React.Dispatch<React.SetStateAction<number>>;
+  item: any;
+};
+
+export type ProductItemProps = {
+    title: string;
+    color: string;
+    search: string;
 }
