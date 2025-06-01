@@ -75,3 +75,14 @@ export type ProductItemProps = {
     color: string;
     search: string;
 }
+
+type ProductDetailSlide = {
+    title: string;
+    image: string;
+}
+
+export type ProductDetailProps = {
+    title: string[];
+    description: string; 
+    slide: ProductDetailSlide[];
+}

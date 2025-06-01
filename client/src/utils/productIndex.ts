@@ -289,71 +289,87 @@ import detail16e_4 from "../assets/product/detail/ip16e/4/xlarge.jpg";
 import detail16e_5 from "../assets/product/detail/ip16e/5/xlarge.jpg";
 
 export const productDetailImages = {
-  ip16: [
-    {
-      title:
-        "Click to launch the Camera app. Click again to instantly take a photo.",
-      image: detail16_1,
-    },
-    {
-      title: "Click and hold to start recording video.",
-      image: detail16_2,
-    },
-    {
-      title: "A light press opens controls like zoom.",
-      image: detail16_3,
-    },
-    {
-      title:
-        "With a double light press, you can select another camera setting.",
-      image: detail16_4,
-    },
-  ],
-  ip16Pro: [
-    {
-      title: "iPhone 16 Pro Max has our largest iPhone display ever.",
-      image: detail16Pro_1,
-    },
-    {
-      title: "The thinnest borders on any Apple product",
-      image: detail16Pro_2,
-    },
-    {
-      title: "Premium Grade 5 titanium is exceptionally durable",
-      image: detail16Pro_3,
-    },
-    {
-      title: "Four striking colors, from Black Titanium to new Desert Titanium",
-      image: detail16Pro_4,
-    },
-  ],
-  ip16e: [
-    {
-      title: "Tougher than any smartphone glass.",
-      subTitle: "Ceramic Shield",
-      image: detail16e_1,
-    },
-    {
-      title: "A fast track to your favorite feature.",
-      subTitle: "Action Button",
-      image: detail16e_2,
-    },
-    {
-      title: "One. For all.",
-      subTitle: "USB-C",
-      image: detail16e_3,
-    },
-    {
-      title: "Put your best face forward.",
-      subTitle: "Face ID",
-      image: detail16e_4,
-    },
-    {
-      title: "Colors? We’ve got you covered.",
-      subTitle: "Color",
-      image: detail16e_5,
-    },
-  ],
+  ip16: {
+    title: ["Take total Camera Control.", "Touch. Zoom. Click. Quick."],
+    description:
+      "Camera Control is a new way to take photos and videos on iPhone 16. It’s a simple, intuitive way to capture the moment with just a touch, zoom, or click.",
+    slide: [
+      {
+        title:
+          "Click to launch the Camera app. Click again to instantly take a photo.",
+        image: detail16_1,
+      },
+      {
+        title: "Click and hold to start recording video.",
+        image: detail16_2,
+      },
+      {
+        title: "A light press opens controls like zoom.",
+        image: detail16_3,
+      },
+      {
+        title:
+          "With a double light press, you can select another camera setting.",
+        image: detail16_4,
+      },
+    ],
+  },
+  ip16Pro: {
+    title: ["Strength. Beauty. Titanium."],
+    description:
+      "iPhone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.",
+    slide: [
+      {
+        title: "iPhone 16 Pro Max has our largest iPhone display ever.",
+        image: detail16Pro_1,
+      },
+      {
+        title: "The thinnest borders on any Apple product",
+        image: detail16Pro_2,
+      },
+      {
+        title: "Premium Grade 5 titanium is exceptionally durable",
+        image: detail16Pro_3,
+      },
+      {
+        title:
+          "Four striking colors, from Black Titanium to new Desert Titanium",
+        image: detail16Pro_4,
+      },
+    ],
+  },
+  ip16e: {
+    title: ["Drop-dead gorgeous.", "Drop-tested tough."],
+    description:
+      "iPhone 16e has an incredible design — inside and out — and is available in an elegant black or white finish. Made from durable aerospace‑grade aluminum, the enclosure on iPhone 16e is built to go the distance and survive life’s oops, whoops, and oh nooos.",
+    slide: [
+      {
+        title: "Tougher than any smartphone glass.",
+        subTitle: "Ceramic Shield",
+        image: detail16e_1,
+      },
+      {
+        title: "A fast track to your favorite feature.",
+        subTitle: "Action Button",
+        image: detail16e_2,
+      },
+      {
+        title: "One. For all.",
+        subTitle: "USB-C",
+        image: detail16e_3,
+      },
+      {
+        title: "Put your best face forward.",
+        subTitle: "Face ID",
+        image: detail16e_4,
+      },
+      {
+        title: "Colors? We’ve got you covered.",
+        subTitle: "Color",
+        image: detail16e_5,
+      },
+    ],
+  },
 };
 
 // List of iPhone models
@@ -475,51 +491,51 @@ export const productVisualImages = {
 export const productModels = {
   ip16: [
     {
-      title: "iPhone 16 in Ultramarine", 
+      title: "iPhone 16 in Ultramarine",
       color: "#94a5eb",
-      search: "Ultramarine"
+      search: "Ultramarine",
     },
     {
       title: "iPhone 16 in Teal",
       color: "#abcfcd",
-      search: "Teal"
+      search: "Teal",
     },
     {
       title: "iPhone 16 in Black",
       color: "#35393b",
-      search: "Black"
+      search: "Black",
     },
     {
       title: "iPhone 16 in White",
       color: "#f1f1f1",
-      search: "White"
+      search: "White",
     },
     {
       title: "iPhone 16 in Pink",
       color: "#eda8d5",
-      search: "Pink"
-    }
+      search: "Pink",
+    },
   ],
   ip16Pro: [
     {
       title: "iPhone 16 Pro in Black Titanium",
       color: "#3c3c3d",
-      search: "Pro Black"
+      search: "Pro Black",
     },
     {
       title: "iPhone 16 Pro in White Titanium",
       color: "#f0efee",
-      search: "Pro White"
+      search: "Pro White",
     },
     {
       title: "iPhone 16 Pro in Desert Titanium",
       color: "#bfa48f",
-      search: "Pro Desert"
+      search: "Pro Desert",
     },
     {
       title: "iPhone 16 Pro in Natural Titanium",
       color: "#c2bcb2",
-      search: "Pro Natural"
-    }
+      search: "Pro Natural",
+    },
   ],
-}
+};

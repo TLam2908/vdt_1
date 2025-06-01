@@ -5,9 +5,9 @@ const Lights = () => {
     <group name="lights">
       <Environment resolution={256}>
         <group>
-          <Lightformer form="rect" intensity={10} position={[-1, 0, -10]} scale={10} color={"#495057"} />
-          <Lightformer form="rect" intensity={10} position={[-10, 2, 1]} scale={10} rotation-y={Math.PI / 2} />
-          <Lightformer form="rect" intensity={10} position={[10, 0, 1]} scale={10} rotation-y={Math.PI / 2} />
+          <Lightformer form="rect" intensity={5} position={[-1, 0, -10]} scale={10} color={"#495057"} />
+          <Lightformer form="rect" intensity={5} position={[-10, 2, 1]} scale={10} rotation-y={Math.PI / 2} />
+          <Lightformer form="rect" intensity={5} position={[10, 0, 1]} scale={10} rotation-y={Math.PI / 2} />
         </group>
       </Environment>
 
@@ -27,7 +27,7 @@ const Lights = () => {
         intensity={Math.PI * 0.2}
         color={"#f8f9fa"}
       />
-      <spotLight position={[0, 15, 5]} angle={0.15} penumbra={1} decay={0.1} intensity={Math.PI * 3} />
+      <spotLight position={[0, 15, 5]} angle={0.15} penumbra={1} decay={0.1} intensity={Math.PI * 2} />
     </group>
   );
 };
