@@ -112,3 +112,5 @@ export const assessoryImg1 = accessory1
 export const assessoryImg2 = accessory2
 export const assessoryImg1Small = accessory1Small
 export const assessoryImg2Small = accessory2Small
+
+//     "dev": "nodemon --watch ./ --ext ts --exec ts-node index.ts"

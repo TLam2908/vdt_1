@@ -66,7 +66,7 @@ export type ModelViewProps = {
   groupRef: React.RefObject<Three.Group>;
   gsapType: string;
   controlRef: React.RefObject<any>;
-  setRotation: React.Dispatch<React.SetStateAction<number>>;
+//   setRotation: React.Dispatch<React.SetStateAction<number>>;
   item: any;
 };
 
@@ -85,4 +85,9 @@ export type ProductDetailProps = {
     title: string[];
     description: string; 
     slide: ProductDetailSlide[];
+}
+
+export type ProductRegistrationProps = {
+    name: string;
+    image: string;
 }

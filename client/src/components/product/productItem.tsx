@@ -11,7 +11,7 @@ const ProductItem = ({props} : {props: ProductItemProps[]}) => {
   const [model, setModel] = useState(props[0]);
 
   const cameraControl = useRef<Three.Group>(new Three.Group());
-  const [rotation, setRotation] = useState(0);
+  // const [rotation, setRotation] = useState(0);
 
   const threeRef = useRef<Three.Group>(new Three.Group());
   return (
@@ -31,7 +31,7 @@ const ProductItem = ({props} : {props: ProductItemProps[]}) => {
               groupRef={threeRef}
               gsapType="view1"
               controlRef={cameraControl}
-              setRotation={setRotation}
+              // setRotation={setRotation}
               item={model}
             />
 

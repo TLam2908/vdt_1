@@ -483,9 +483,18 @@ import visual16pro from "../assets/product/visual/ip16pro/large.jpg";
 import visual16e from "../assets/product/visual/ip16e/large.jpg";
 
 export const productVisualImages = {
-  ip16: visual16,
-  ip16Pro: visual16pro,
-  ip16e: visual16e,
+  ip16: {
+    name: "16",
+    image: visual16,
+  },
+  ip16Pro: {
+    name: "16Pro",
+    image: visual16pro,
+  },
+  ip16e: {
+    name: "16e",
+    image: visual16e,
+  },
 };
 
 export const productModels = {

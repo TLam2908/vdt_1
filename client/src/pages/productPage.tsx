@@ -8,6 +8,7 @@ import ProductItem from "../components/product/productItem";
 import Footer from "../components/footer";
 import Information from "../components/landing/information";
 import ProductDetail from "../components/product/productDetail";
+import ProductRegistation from "../components/product/productRegistration";
 
 const ProductPage = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -27,6 +28,9 @@ const ProductPage = () => {
       )}
       {productData?.details && (
         <ProductDetail props={productData.details} />
+      )}
+      {productData?.visual && (
+        <ProductRegistation props={productData.visual}/>
       )}
       <Information/>
       <Footer />

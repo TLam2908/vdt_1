@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./client
+    container_name: vdt-frontend
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./client:/app
+    environment:
+      - API_URL=http://localhost:8001
+    depends_on:
+      - server
+    networks:
+      - vdt
+
+  server: 
+    build: ./server
+    container_name: vdt-server
+    ports: 
+      - "8001:8000"
+    volumes:
+      - ./server:/app
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=123456
+      - DB_NAME=vdt
+    depends_on:
+      - postgres
+    networks:
+      - vdt
+
+  postgres:
+    image: postgres:latest
+    container_name: vdt-postgres
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: vdt
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - vdt
+
+networks:
+  vdt:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

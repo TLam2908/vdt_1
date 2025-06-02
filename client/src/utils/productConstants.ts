@@ -1,4 +1,4 @@
-import { productHeroImages, productHighlightImages, productDetailImages, productListImages, productAIImages, productModels } from "./productIndex"
+import { productHeroImages, productHighlightImages, productDetailImages, productListImages, productAIImages, productModels, productVisualImages } from "./productIndex"
 
 export const productDetails = [
     {
@@ -10,6 +10,7 @@ export const productDetails = [
         details: productDetailImages.ip16,
         list: productModels.ip16,
         ai: productAIImages.ip16,
+        visual: productVisualImages.ip16,
     },
     {
         id: 2,
@@ -19,6 +20,7 @@ export const productDetails = [
         highlights: productHighlightImages.ip16e,
         details: productDetailImages.ip16e,
         ai: productAIImages.ip16e,
+        visual: productVisualImages.ip16e,
     },
     {
         id: 3,
@@ -29,6 +31,7 @@ export const productDetails = [
         details: productDetailImages.ip16Pro,
         list: productModels.ip16Pro,
         ai: productAIImages.ip16Pro,
+        visual: productVisualImages.ip16Pro,
     },
   
 ]

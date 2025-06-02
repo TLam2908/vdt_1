@@ -21,7 +21,7 @@ const ModelView = ({
   gsapType,
   controlRef,
   item,
-  setRotation,
+  // setRotation,
 }: ModelViewProps) => {
   // Responsive scaling based on viewport
   const [scale, setScale] = useState(0.17);
@@ -77,7 +77,7 @@ const ModelView = ({
         minPolarAngle={Math.PI / 2.5}
         maxPolarAngle={Math.PI / 1.5}
         target={new Three.Vector3(0, 0, 0)}
-        onEnd={() => setRotation(controlRef.current?.getAzimuthalAngle() ?? 0)}
+        // onEnd={() => setRotation(controlRef.current?.getAzimuthalAngle() ?? 0)}
       />
 
       <Lights />
