@@ -1,16 +1,19 @@
-FROM node:20
 
+# 1. Use Debian-based Node 22 so that Rollup’s “-gnu” binary is correct
+FROM node:22-slim
+
+# 2. Create app directory
 WORKDIR /app
 
-# Copy package files
+# 3. Copy package.json and lockfile first, install dependencies here
 COPY package*.json ./
+RUN npm install
 
-# Cài mà không lấy optional deps (đặc biệt là native rollup bindings)
-RUN npm install --omit=optional
-
-# Copy toàn bộ source
+# 4. Copy the rest of your source code
 COPY . .
 
-EXPOSE 3000
+# 5. Expose whatever port your app listens on
+EXPOSE 5173
 
+# 6. Default command (adjust if you have a custom start script)
 CMD ["npm", "run", "dev"]

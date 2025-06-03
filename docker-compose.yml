@@ -1,13 +1,10 @@
-version: '3.8'
 
 services:
   frontend:
     build: ./client
     container_name: vdt-frontend
     ports:
-      - "3001:3000"
-    volumes:
-      - ./client:/app
+      - "5172:5173"
     environment:
       - API_URL=http://localhost:8001
     depends_on:
@@ -20,8 +17,6 @@ services:
     container_name: vdt-server
     ports: 
       - "8001:8000"
-    volumes:
-      - ./server:/app
     environment:
       - DB_HOST=postgres
       - DB_PORT=5432

@@ -1,4 +1,4 @@
-import { productHeroImages, productHighlightImages, productDetailImages, productListImages, productAIImages, productModels, productVisualImages } from "./productIndex"
+import { productHeroImages, productHighlightImages, productDetailImages, productAIImages, productModels, productVisualImages } from "./productIndex"
 
 export const productDetails = [
     {
