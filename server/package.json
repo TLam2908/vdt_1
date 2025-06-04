@@ -12,13 +12,17 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.1.0"
+    "@prisma/client": "^5.10.2",
+    "prisma": "^5.10.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "zod": "^3.25.51"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.18",
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.29",
     "nodemon": "^3.1.10",
-    "prisma": "^5.10.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
