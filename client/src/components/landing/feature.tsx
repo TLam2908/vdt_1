@@ -14,7 +14,7 @@ const Feature = () => {
   useGSAP(
     () => {
       gsap.fromTo(
-        "#title",
+        "#feature-title",
         {
           y: 50,
           opacity: 0,
@@ -40,7 +40,7 @@ const Feature = () => {
       ref={sectionRef}
       className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-40 pb-20"
     >
-      <div id="title" className="mb-10">
+      <div id="feature-title" className="mb-10">
         <Title text="Explore iPhone" />
       </div>
       <div id="feature">

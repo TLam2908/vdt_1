@@ -1,4 +1,4 @@
-import Title from "./../title";
+import Title from "../title";
 import { productLanding } from "../../utils/constants";
 import type { ProductLanding } from "../../types/interface";
 import ProductCard from "./productSlide";
@@ -17,7 +17,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Explore = () => {
+const Lineup = () => {
   const [isWideScreen, setIsWideScreen] = useState(false);
   useEffect(() => {
     const checkScreenWidth = () => {
@@ -45,7 +45,7 @@ const Explore = () => {
       });
 
       tl.fromTo(
-        "#title-container",
+        "#lineup-title",
         {
           y: 50,
           opacity: 0,
@@ -79,7 +79,7 @@ const Explore = () => {
     <section ref={sectionRef} className="w-full bg-gray-50">
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-20">
         <div
-          id="title-container"
+          id="lineup-title"
           className="flex flex-row max-md:flex-col max-md:items-start md:justify-between items-center"
         >
           <Title text="Explore the lineup." />
@@ -128,4 +128,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default Lineup;

@@ -42,7 +42,7 @@ const Hero = () => {
 
         // title animation
         .fromTo(
-          "#heroTitle, #heroSubtitle",
+          "#hero-title, #hero-subtitle",
           {
             y: 30,
             opacity: 0,
@@ -51,7 +51,6 @@ const Hero = () => {
             y: 0,
             opacity: 1,
             duration: 2,
-            stagger: 0.2,
             ease: "power3.out",
           },
           "<"
@@ -97,13 +96,13 @@ const Hero = () => {
       <div className="w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-20">
         <div className="flex max-md:flex-col justify-between items-center max-md:items-start">
           <h1
-            id="heroTitle"
+            id="hero-title"
             className="text-7xl max-xl:text-6xl max-lg:text-5xl max-md:text-4xl font-semibold"
           >
             iPhone
           </h1>
           <p
-            id="heroSubtitle"
+            id="hero-subtitle"
             className="text-2xl max-xl:text-xl max-md:text-lg mt-2 font-semibold"
           >
             Designed for everyone to love.

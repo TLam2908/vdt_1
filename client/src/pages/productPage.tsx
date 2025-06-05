@@ -33,7 +33,7 @@ const ProductPage = () => {
         <ProductRegistation props={productData.visual}/>
       )}
       <Information/>
-      <Footer />
+      <Footer props={productData?.title || ""}/>
     </div>
   );
 };

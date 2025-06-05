@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Information = ({props} : {props: string}) => {
+const Information = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -20,7 +20,7 @@ const Information = ({props} : {props: string}) => {
     });
 
     tl.fromTo(
-      "#title-container",
+      "#title-information",
       {
         y: 50,
         opacity: 0,
@@ -51,7 +51,7 @@ const Information = ({props} : {props: string}) => {
   return (
     <div className="w-full" ref={sectionRef}>
       <div className="w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-40">
-        <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-16" id="title-container">
+        <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-16" id="title-information">
           iPhone
         </h1>
 

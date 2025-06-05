@@ -1,5 +1,6 @@
 import type { ProductDetailProps } from "../../types/interface";
 import ProductDetailSlide from "./productDetailSlide";
+import { useRef } from "react";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,9 +16,31 @@ import "swiper/css/mousewheel";
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = ({ props }: { props: ProductDetailProps }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   useGSAP(() => {
-    // Animation cho từng slide
-    gsap.fromTo(
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.fromTo(
+      "#title-detail",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      }
+    );
+    tl.fromTo(
       ".slide-item",
       {
         y: 60,
@@ -32,20 +55,15 @@ const ProductDetail = ({ props }: { props: ProductDetailProps }) => {
         rotationY: 0,
         duration: 0.5,
         ease: "back.out(1.2)",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".slide-item",
-          start: "top 70%",
-          toggleActions: "play none none none",
-        },
-      }
+      },
+      "-=0.8"
     );
   });
 
   return (
-    <section className="w-full bg-white">
+    <section ref={sectionRef} className="w-full bg-white">
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-40">
-        <div className="flex flex-col items-start mb-10">
+        <div className="flex flex-col items-start mb-10" id="title-detail">
           {props.title.map((title, index) => (
             <h1
               key={index}
@@ -83,11 +101,8 @@ const ProductDetail = ({ props }: { props: ProductDetailProps }) => {
           >
             {props.slide.map((slide, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <div className="'slide-item">
-                    <ProductDetailSlide
-                      img={slide.image}
-                      title={slide.title}
-                    />
+                <div className="slide-item">
+                  <ProductDetailSlide img={slide.image} title={slide.title} />
                 </div>
               </SwiperSlide>
             ))}

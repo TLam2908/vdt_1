@@ -28,7 +28,7 @@ const Reason = () => {
     });
 
     tl.fromTo(
-      "#reason-title-container",
+      "#reason-title",
       {
         y: 50,
         opacity: 0,
@@ -60,7 +60,7 @@ const Reason = () => {
     <section ref={sectionRef} className="w-full bg-gray-50">
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-20">
         <div
-          id="reason-title-container"
+          id="reason-title"
           className="flex flex-row max-md:flex-col max-md:items-start md:justify-between items-center"
         >
           <div className="flex flex-col">

@@ -50,7 +50,7 @@ const Banner = () => {
     
     // Title animation
     .fromTo(
-      "#title", 
+      "#banner-title", 
       { y: 30, opacity: 0 }, 
       { 
         y: 0, 
@@ -93,7 +93,7 @@ const Banner = () => {
     <section ref={sectionRef} className="w-full bg-gray-50">
       <div className="flex flex-col w-10/12 px-16 max-md:px-5 mx-auto pt-20 pb-40">
         <div
-          id="title"
+          id="banner-title"
           className="flex flex-row justify-between max-md:flex-col max-md:items-start md:justify-between items-center mb-10"
         >
           <Title text="Take a closer look." />
