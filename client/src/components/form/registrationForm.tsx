@@ -5,6 +5,7 @@ import {
   registrationSchema,
   type RegistrationFormData,
 } from "../../validation/registration";
+import { createRegistration } from "../../api/registrationApi";
 
 import PersonalInfoStep from "./personalStep";
 import AddressInfoStep from "./addressStep";
@@ -41,18 +42,18 @@ const RegistrationForm = () => {
 
   const progress = (currentStep / totalSteps) * 100;
 
-    const getFieldsForStep = (step: number): (keyof RegistrationFormData)[] => {
-      switch (step) {
-        case 1:
-          return ["name", "email", "phone"];
-        case 2:
-          return ["city", "district", "street"];
-        case 3:
-          return ["productName", "productColor", "productStorage"];
-        default:
-          return [];
-      }
-    };
+  const getFieldsForStep = (step: number): (keyof RegistrationFormData)[] => {
+    switch (step) {
+      case 1:
+        return ["name", "email", "phone"];
+      case 2:
+        return ["city", "district", "street"];
+      case 3:
+        return ["productName", "productColor", "productStorage"];
+      default:
+        return [];
+    }
+  };
 
   const nextStep = async () => {
     const currentFields = getFieldsForStep(currentStep);
@@ -68,8 +69,9 @@ const RegistrationForm = () => {
 
   const onSubmit = async (data: RegistrationFormData) => {
     try {
+      await createRegistration(data);
       console.log("Form submitted:", data);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      //   await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setSubmittedData(data);
       setCurrentStep(4);

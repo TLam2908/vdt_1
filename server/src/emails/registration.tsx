@@ -17,6 +17,7 @@ interface RegistrationEmailProps {
   id: number;
   name: string;
   email: string;
+  phone: string;
   city: string;
   district: string;
   street: string;
@@ -25,143 +26,183 @@ interface RegistrationEmailProps {
   productStorage: string;
   createdAt: Date;
 }
+
 const RegistrationEmail = ({ props }: { props: RegistrationEmailProps }) => (
   <Html>
     <Head />
-    <Preview>Registration Confirmation - Welcome to Our Store</Preview>
+    <Preview>🎉 Product Registration Complete - Welcome to Viettel!</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Section>
+        
+        {/* Header */}
+        <Section style={header}>
           <Row>
-            <Column align="right" style={tableCell}>
-              <Text style={heading}>Registration Confirmed</Text>
+            <Column>
+              <Text style={logo}>VIETTEL</Text>
+            </Column>
+            <Column align="right">
+              <Text style={headerDate}>
+                {props.createdAt.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </Text>
             </Column>
           </Row>
         </Section>
 
-        <Section>
-          <Text style={welcomeText}>
-            Thank you for registering with us! Your product registration has
-            been successfully completed.
+        {/* Hero Section */}
+        <Section style={heroSection}>
+          <Text style={successEmoji}>🎉</Text>
+          <Text style={heroTitle}>Registration Successful!</Text>
+          <Text style={heroSubtitle}>
+            Hi {props.name.split(' ')[0]}, your product is now officially registered and protected with Viettel.
           </Text>
         </Section>
 
-        <Section style={informationTable}>
-          <Row style={informationTableRow}>
-            <Column colSpan={2}>
-              <Section>
-                <Row>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>REGISTRATION ID</Text>
-                    <Text style={informationTableValue}>#{props.id}</Text>
-                  </Column>
-                </Row>
-
-                <Row>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>REGISTRATION DATE</Text>
-                    <Text style={informationTableValue}>
-                      {props.createdAt.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </Text>
-                  </Column>
-                </Row>
-
-                <Row>
-                  <Column style={informationTableColumn}>
-                    <Text style={informationTableLabel}>EMAIL</Text>
-                    <Text style={informationTableValue}>{props.email}</Text>
-                  </Column>
-                </Row>
-              </Section>
+        {/* Registration Summary Card */}
+        <Section style={summaryCard}>
+          <Text style={cardHeader}>Registration Summary</Text>
+          
+          <Row style={summaryRow}>
+            <Column style={summaryLabelCol}>
+              <Text style={summaryLabel}>Registration ID</Text>
             </Column>
-            <Column style={informationTableColumn} colSpan={2}>
-              <Text style={informationTableLabel}>REGISTERED TO</Text>
-              <Text style={informationTableValue}>{props.name}</Text>
-              <Text style={informationTableValue}>{props.street}</Text>
-              <Text style={informationTableValue}>
-                {props.district}, {props.city}
-              </Text>
+            <Column>
+              <Text style={summaryValue}>{props.id}</Text>
+            </Column>
+          </Row>
+
+          <Hr style={dividerLine} />
+
+          <Row style={summaryRow}>
+            <Column style={summaryLabelCol}>
+              <Text style={summaryLabel}>Registered To</Text>
+            </Column>
+            <Column>
+              <Text style={summaryValue}>{props.name}</Text>
+              <Text style={summarySecondary}>{props.email}</Text>
+            </Column>
+          </Row>
+
+          <Hr style={dividerLine} />
+
+          <Row style={summaryRow}>
+            <Column style={summaryLabelCol}>
+              <Text style={summaryLabel}>Delivery Address</Text>
+            </Column>
+            <Column>
+              <Text style={summaryValue}>{props.street}</Text>
+              <Text style={summarySecondary}>{props.district}, {props.city}</Text>
             </Column>
           </Row>
         </Section>
 
-        <Section style={productTitleTable}>
-          <Text style={productsTitle}>Product Registration Details</Text>
+        {/* Product Details */}
+        <Section style={productSection}>
+          <Text style={sectionTitle}>Product Details</Text>
+          
+          <Section style={productCard}>
+            <Row>
+              <Column style={productIconCol}>
+                <Text style={productEmoji}>📱</Text>
+              </Column>
+              <Column style={productDetailsCol}>
+                <Text style={productTitle}>{props.productName}</Text>
+                <Text style={productSpecs}>
+                  <span style={specTag}>{props.productColor}</span>
+                  <span style={specTag}>{props.productStorage}</span>
+                </Text>
+                <Text style={registrationDate}>
+                  Registered on {props.createdAt.toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </Text>
+              </Column>
+              <Column align="right" style={statusCol}>
+                <Text style={activeStatus}>● ACTIVE</Text>
+              </Column>
+            </Row>
+          </Section>
         </Section>
 
-        <Section>
-          <Row>
-            <Column style={{ paddingLeft: "22px" }}>
-              <Text style={productTitle}>{props.productName}</Text>
-              <Text style={productDescription}>
-                Color: {props.productColor}
-              </Text>
-              <Text style={productDescription}>
-                Storage: {props.productStorage}
-              </Text>
-              <Text style={productDescription}>
-                Registered on {props.createdAt.toLocaleDateString()}
-              </Text>
+        {/* Benefits Grid */}
+        <Section style={benefitsSection}>
+          <Text style={sectionTitle}>Your Registration Benefits</Text>
+          
+          <Row style={benefitsGrid}>
+            <Column style={benefitCard}>
+              <Text style={benefitEmoji}>🛡️</Text>
+              <Text style={benefitTitle}>Extended Warranty</Text>
+              <Text style={benefitDesc}>Enhanced protection beyond standard coverage</Text>
             </Column>
-            <Column style={productStatusWrapper} align="right">
-              <Text style={productStatus}>✓ Registered</Text>
+            <Column style={benefitCard}>
+              <Text style={benefitEmoji}>🚀</Text>
+              <Text style={benefitTitle}>Priority Support</Text>
+              <Text style={benefitDesc}>Skip the queue with dedicated assistance</Text>
+            </Column>
+          </Row>
+          
+          <Row style={benefitsGrid}>
+            <Column style={benefitCard}>
+              <Text style={benefitEmoji}>🎁</Text>
+              <Text style={benefitTitle}>Exclusive Offers</Text>
+              <Text style={benefitDesc}>Access to member-only deals and promotions</Text>
+            </Column>
+            <Column style={benefitCard}>
+              <Text style={benefitEmoji}>🔧</Text>
+              <Text style={benefitTitle}>Service Tracking</Text>
+              <Text style={benefitDesc}>Easy repair and maintenance management</Text>
             </Column>
           </Row>
         </Section>
 
-        <Hr style={productPriceLine} />
-
-        <Section>
-          <Text style={benefitsTitle}>Your Registration Benefits:</Text>
-          <Text style={benefitItem}>• Extended warranty coverage</Text>
-          <Text style={benefitItem}>• Priority customer support</Text>
-          <Text style={benefitItem}>
-            • Exclusive product updates and offers
-          </Text>
-          <Text style={benefitItem}>• Easy service and repair tracking</Text>
-        </Section>
-
-        <Section>
+        {/* Quick Actions */}
+        <Section style={actionsSection}>
+          <Text style={actionsTitle}>Quick Actions</Text>
           <Row>
-            <Column align="center" style={ctaSection}>
-              <Text style={ctaText}>Need Help?</Text>
-              <Link href="https://support.example.com" style={ctaLink}>
-                Visit Support Center
+            <Column align="center" style={actionCol}>
+              <Link href="https://support.viettel.com" style={primaryButton}>
+                Get Support
+              </Link>
+            </Column>
+            <Column align="center" style={actionCol}>
+              <Link href="https://account.viettel.com" style={secondaryButton}>
+                Manage Account
               </Link>
             </Column>
           </Row>
         </Section>
 
-        <Hr style={footerLine} />
+        {/* Important Notice */}
+        <Section style={noticeSection}>
+          <Text style={noticeTitle}>📋 Important</Text>
+          <Text style={noticeText}>
+            Please save this email as proof of registration. You'll need your registration ID {props.id} for warranty claims and support requests.
+          </Text>
+        </Section>
 
-        <Text style={footerText}>
-          This email confirms your product registration. Please keep this email
-          for your records. If you have any questions about your registration,
-          please contact our support team.
-        </Text>
-
-        <Text style={footerTextCenter}>
-          <Link href="https://example.com/account" style={footerLink}>
-            Manage Your Account
-          </Link>
-          {" • "}
-          <Link href="https://example.com/support" style={footerLink}>
-            Contact Support
-          </Link>
-          {" • "}
-          <Link href="https://example.com/privacy" style={footerLink}>
-            Privacy Policy
-          </Link>
-        </Text>
-
-        <Text style={footerCopyright}>
-          Copyright © 2025 Viettel. <br />
-          <Link href="https://example.com">All rights reserved</Link>
-        </Text>
+        {/* Footer */}
+        <Hr style={footerDivider} />
+        
+        <Section style={footer}>
+          <Text style={footerLinks}>
+            <Link href="https://viettel.com/account" style={footerLink}>Account Settings</Link>
+            {" · "}
+            <Link href="https://viettel.com/support" style={footerLink}>Help Center</Link>
+            {" · "}
+            <Link href="https://viettel.com/privacy" style={footerLink}>Privacy Policy</Link>
+          </Text>
+          
+          <Text style={footerCopyright}>
+            © 2025 Viettel Group. All rights reserved.<br />
+            Making technology accessible for everyone.
+          </Text>
+        </Section>
       </Container>
     </Body>
   </Html>
@@ -169,184 +210,309 @@ const RegistrationEmail = ({ props }: { props: RegistrationEmailProps }) => (
 
 export default RegistrationEmail;
 
-// Styles
+// Modern Styles
 const main = {
-  fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-  backgroundColor: "#ffffff",
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif',
+  backgroundColor: "#f8fafc",
+  margin: 0,
+  padding: 0,
 };
 
 const container = {
   margin: "0 auto",
-  padding: "20px 0 48px",
-  width: "660px",
-  maxWidth: "100%",
+  padding: "40px 20px",
+  maxWidth: "600px",
+  backgroundColor: "#ffffff",
 };
 
-const tableCell = { display: "table-cell" };
-
-const heading = {
-  fontSize: "32px",
-  fontWeight: "300",
-  color: "#888888",
+const header = {
+  paddingBottom: "32px",
+  borderBottom: "1px solid #e2e8f0",
+  marginBottom: "40px",
 };
 
-const welcomeText = {
-  textAlign: "center" as const,
-  margin: "36px 0 40px 0",
-  fontSize: "16px",
-  fontWeight: "400",
-  color: "#111111",
-  lineHeight: "24px",
-};
-
-const informationTable = {
-  borderCollapse: "collapse" as const,
-  borderSpacing: "0px",
-  color: "rgb(51,51,51)",
-  backgroundColor: "rgb(250,250,250)",
-  borderRadius: "3px",
-  fontSize: "12px",
-};
-
-const informationTableRow = {
-  minHeight: "46px",
-};
-
-const informationTableColumn = {
-  paddingLeft: "20px",
-  borderStyle: "solid",
-  borderColor: "white",
-  borderWidth: "0px 1px 1px 0px",
-  minHeight: "44px",
-};
-
-const informationTableLabel = {
+const logo = {
+  fontSize: "24px",
+  fontWeight: "700",
+  color: "#dc2626",
   margin: "0",
-  padding: "0",
-  lineHeight: 1.4,
-  color: "rgb(102,102,102)",
-  fontSize: "10px",
+  letterSpacing: "1px",
 };
 
-const informationTableValue = {
-  fontSize: "12px",
-  margin: "0",
-  padding: "0",
-  lineHeight: 1.4,
-};
-
-const productTitleTable = {
-  ...informationTable,
-  margin: "30px 0 15px 0",
-  minHeight: "24px",
-};
-
-const productsTitle = {
-  background: "#fafafa",
-  paddingLeft: "10px",
+const headerDate = {
   fontSize: "14px",
+  color: "#64748b",
+  margin: "0",
+};
+
+const heroSection = {
+  textAlign: "center" as const,
+  paddingBottom: "40px",
+};
+
+const successEmoji = {
+  fontSize: "48px",
+  margin: "0 0 16px 0",
+};
+
+const heroTitle = {
+  fontSize: "32px",
+  fontWeight: "700",
+  color: "#0f172a",
+  margin: "0 0 12px 0",
+  lineHeight: "1.2",
+};
+
+const heroSubtitle = {
+  fontSize: "18px",
+  color: "#475569",
+  margin: "0",
+  lineHeight: "1.5",
+};
+
+const summaryCard = {
+  backgroundColor: "#f8fafc",
+  borderRadius: "12px",
+  padding: "24px",
+  marginBottom: "32px",
+  border: "1px solid #e2e8f0",
+};
+
+const cardHeader = {
+  fontSize: "20px",
+  fontWeight: "600",
+  color: "#0f172a",
+  margin: "0 0 20px 0",
+};
+
+const summaryRow = {
+  paddingBottom: "16px",
+};
+
+const summaryLabelCol = {
+  width: "140px",
+  verticalAlign: "top" as const,
+};
+
+const summaryLabel = {
+  fontSize: "14px",
+  color: "#64748b",
   fontWeight: "500",
   margin: "0",
 };
 
-const productIcon = {
-  margin: "0 0 0 20px",
-  borderRadius: "14px",
-  border: "1px solid rgb(242,242,242)",
+const summaryValue = {
+  fontSize: "16px",
+  color: "#0f172a",
+  fontWeight: "600",
+  margin: "0",
+};
+
+const summarySecondary = {
+  fontSize: "14px",
+  color: "#64748b",
+  margin: "4px 0 0 0",
+};
+
+const dividerLine = {
+  margin: "16px 0",
+  borderColor: "#e2e8f0",
+};
+
+const productSection = {
+  marginBottom: "40px",
+};
+
+const sectionTitle = {
+  fontSize: "20px",
+  fontWeight: "600",
+  color: "#0f172a",
+  margin: "0 0 20px 0",
+};
+
+const productCard = {
+  backgroundColor: "#ffffff",
+  border: "2px solid #e2e8f0",
+  borderRadius: "12px",
+  padding: "20px",
+};
+
+const productIconCol = {
+  width: "60px",
+  verticalAlign: "top" as const,
+};
+
+const productEmoji = {
+  fontSize: "32px",
+  margin: "0",
+};
+
+const productDetailsCol = {
+  verticalAlign: "top" as const,
+  paddingLeft: "16px",
 };
 
 const productTitle = {
-  fontSize: "14px",
-  fontWeight: "600",
-  margin: "0",
-  padding: "0",
-  lineHeight: 1.4,
-};
-
-const productDescription = {
-  fontSize: "12px",
-  color: "rgb(102,102,102)",
-  margin: "0",
-  padding: "0",
-  lineHeight: 1.4,
-};
-
-const productStatusWrapper = {
-  display: "table-cell",
-  padding: "0px 20px 0px 0px",
-  width: "120px",
-  verticalAlign: "top",
-};
-
-const productStatus = {
-  fontSize: "14px",
-  fontWeight: "600",
-  margin: "0",
-  color: "#22c55e",
-};
-
-const productPriceLine = { margin: "30px 0 20px 0" };
-
-const benefitsTitle = {
-  fontSize: "16px",
-  fontWeight: "600",
-  margin: "20px 0 10px 0",
-  color: "#111111",
-};
-
-const benefitItem = {
-  fontSize: "14px",
-  margin: "8px 0",
-  color: "#333333",
-  lineHeight: "20px",
-};
-
-const ctaSection = {
-  display: "block",
-  margin: "30px 0",
-  padding: "20px",
-  backgroundColor: "#f8f9fa",
-  borderRadius: "8px",
-};
-
-const ctaText = {
   fontSize: "18px",
-  fontWeight: "500",
-  margin: "0 0 10px 0",
-  color: "#111111",
+  fontWeight: "600",
+  color: "#0f172a",
+  margin: "0 0 8px 0",
 };
 
-const ctaLink = {
-  color: "#0066cc",
-  textDecoration: "none",
+const productSpecs = {
+  margin: "0 0 8px 0",
+};
+
+const specTag = {
+  display: "inline-block",
+  backgroundColor: "#dbeafe",
+  color: "#1e40af",
+  fontSize: "12px",
+  fontWeight: "500",
+  padding: "4px 8px",
+  borderRadius: "6px",
+  marginRight: "8px",
+};
+
+const registrationDate = {
+  fontSize: "14px",
+  color: "#64748b",
+  margin: "0",
+};
+
+const statusCol = {
+  width: "80px",
+  verticalAlign: "top" as const,
+};
+
+const activeStatus = {
+  fontSize: "12px",
+  fontWeight: "600",
+  color: "#059669",
+  margin: "0",
+};
+
+const benefitsSection = {
+  marginBottom: "40px",
+};
+
+const benefitsGrid = {
+  marginBottom: "16px",
+};
+
+const benefitCard = {
+  backgroundColor: "#f8fafc",
+  borderRadius: "8px",
+  padding: "20px",
+  margin: "0 8px",
+  textAlign: "center" as const,
+  border: "1px solid #e2e8f0",
+};
+
+const benefitEmoji = {
+  fontSize: "24px",
+  margin: "0 0 8px 0",
+};
+
+const benefitTitle = {
   fontSize: "16px",
-  fontWeight: "500",
+  fontWeight: "600",
+  color: "#0f172a",
+  margin: "0 0 6px 0",
 };
 
-const footerLine = { margin: "40px 0 20px 0" };
-
-const footerText = {
-  fontSize: "12px",
-  color: "rgb(102,102,102)",
-  margin: "0 0 16px 0",
-  lineHeight: "18px",
+const benefitDesc = {
+  fontSize: "14px",
+  color: "#64748b",
+  margin: "0",
+  lineHeight: "1.4",
 };
 
-const footerTextCenter = {
-  fontSize: "12px",
-  color: "rgb(102,102,102)",
-  margin: "20px 0",
-  lineHeight: "auto",
+const actionsSection = {
+  textAlign: "center" as const,
+  marginBottom: "40px",
+};
+
+const actionsTitle = {
+  fontSize: "20px",
+  fontWeight: "600",
+  color: "#0f172a",
+  margin: "0 0 20px 0",
+};
+
+const actionCol = {
+  padding: "0 10px",
+};
+
+const primaryButton = {
+  display: "inline-block",
+  backgroundColor: "#dc2626",
+  color: "#ffffff",
+  fontSize: "16px",
+  fontWeight: "600",
+  textDecoration: "none",
+  padding: "12px 24px",
+  borderRadius: "8px",
+  minWidth: "120px",
+};
+
+const secondaryButton = {
+  display: "inline-block",
+  backgroundColor: "#ffffff",
+  color: "#dc2626",
+  fontSize: "16px",
+  fontWeight: "600",
+  textDecoration: "none",
+  padding: "12px 24px",
+  borderRadius: "8px",
+  border: "2px solid #dc2626",
+  minWidth: "120px",
+};
+
+const noticeSection = {
+  backgroundColor: "#fef3c7",
+  borderRadius: "8px",
+  padding: "20px",
+  marginBottom: "40px",
+  border: "1px solid #f59e0b",
+};
+
+const noticeTitle = {
+  fontSize: "16px",
+  fontWeight: "600",
+  color: "#92400e",
+  margin: "0 0 8px 0",
+};
+
+const noticeText = {
+  fontSize: "14px",
+  color: "#92400e",
+  margin: "0",
+  lineHeight: "1.5",
+};
+
+const footerDivider = {
+  margin: "40px 0 32px 0",
+  borderColor: "#e2e8f0",
+};
+
+const footer = {
   textAlign: "center" as const,
 };
 
-const footerLink = { color: "rgb(0,115,255)" };
+const footerLinks = {
+  fontSize: "14px",
+  margin: "0 0 16px 0",
+};
 
-const footerIcon = { display: "block", margin: "30px 0 0 0" };
+const footerLink = {
+  color: "#dc2626",
+  textDecoration: "none",
+};
 
 const footerCopyright = {
-  margin: "25px 0 0 0",
-  textAlign: "center" as const,
   fontSize: "12px",
-  color: "rgb(102,102,102)",
+  color: "#64748b",
+  margin: "0",
+  lineHeight: "1.5",
 };
