@@ -1,7 +1,10 @@
 import { PrismaClient, Registration } from "@prisma/client";
 import { RegistrationType } from "../schema/registration.schema.";
 import AppError from "../utils/appError";
-import { NOT_FOUND } from "../constants/http";
+import { BAD_REQUEST, INTERNAL_SERVER_ERROR, NOT_FOUND } from "../constants/http";
+import { sendMail } from "../utils/sendEmail";
+import React from "react";
+import RegistrationEmail from "../emails/registration";
 
 class RegistrationService {
   private prisma: PrismaClient;
@@ -15,6 +18,17 @@ class RegistrationService {
     const createdRegistration = await this.prisma.registration.create({
       data: registrationData,
     });
+
+    const emailResponse = await sendMail({
+      to: registrationData.email,
+      subject: "Registration Successful",
+      text: `Thank you for registering with us! Your registration ID is ${createdRegistration.id}.`,
+      react: React.createElement(RegistrationEmail, {
+        props: createdRegistration})
+    })
+    if (!emailResponse) {
+      throw new AppError(INTERNAL_SERVER_ERROR, "Failed to send registration email");
+    }
     return createdRegistration;
   }
 
