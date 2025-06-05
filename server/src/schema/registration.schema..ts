@@ -4,6 +4,7 @@ export const RegistrationSchema = z.object({
     name: z.string().min(1, 'Name is required'),
     email: z.string().email('Invalid email address'),
     city: z.string().min(1, 'City is required'),
+    phone: z.string().min(1, 'Phone number is required'),
     district: z.string().min(1, 'District is required'),
     street: z.string().min(1, 'Street is required'),
     productName: z.string().min(1, 'Product name is required'),

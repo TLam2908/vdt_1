@@ -16,6 +16,7 @@ datasource db {
 model Registration {
   id    Int    @id @default(autoincrement())
   name  String
+  phone String
   email String 
   city  String
   district String
