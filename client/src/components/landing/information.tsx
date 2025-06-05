@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Information = () => {
+const Information = ({props} : {props: string}) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {

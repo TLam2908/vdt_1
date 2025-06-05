@@ -2,6 +2,7 @@
 CREATE TABLE "Registration" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
+    "phone" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "city" TEXT NOT NULL,
     "district" TEXT NOT NULL,
@@ -14,6 +15,3 @@ CREATE TABLE "Registration" (
 
     CONSTRAINT "Registration_pkey" PRIMARY KEY ("id")
 );
-
--- CreateIndex
-CREATE UNIQUE INDEX "Registration_email_key" ON "Registration"("email");

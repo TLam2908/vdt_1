@@ -17,7 +17,7 @@ const LandingPage = () => {
       <Banner />
       <Reason />
       <Assessory />
-      <Information />
+      <Information props=""/>
       <Footer />
     </div>
   );

@@ -14,16 +14,16 @@ datasource db {
 }
 
 model Registration {
-  id    Int    @id @default(autoincrement())
-  name  String
-  phone String
-  email String 
-  city  String
-  district String
-  street String
-  productName String
-  productColor String
+  id             Int      @id @default(autoincrement())
+  name           String
+  phone          String
+  email          String
+  city           String
+  district       String
+  street         String
+  productName    String
+  productColor   String
   productStorage String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
