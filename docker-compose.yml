@@ -1,8 +1,8 @@
 
 services:
-  frontend:
+  client:
     build: ./client
-    container_name: vdt-frontend
+    container_name: vdt-client
     ports:
       - "5172:5173"
     depends_on:

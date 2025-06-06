@@ -161,23 +161,6 @@ const RegistrationEmail = ({ props }: { props: RegistrationEmailProps }) => (
           </Row>
         </Section>
 
-        {/* Quick Actions */}
-        <Section style={actionsSection}>
-          <Text style={actionsTitle}>Quick Actions</Text>
-          <Row>
-            <Column align="center" style={actionCol}>
-              <Link href="https://support.viettel.com" style={primaryButton}>
-                Get Support
-              </Link>
-            </Column>
-            <Column align="center" style={actionCol}>
-              <Link href="https://account.viettel.com" style={secondaryButton}>
-                Manage Account
-              </Link>
-            </Column>
-          </Row>
-        </Section>
-
         {/* Important Notice */}
         <Section style={noticeSection}>
           <Text style={noticeTitle}>📋 Important</Text>

@@ -13,7 +13,6 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -141,8 +140,6 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
             </p>
             <button
               ref={buttonRef}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
               className={`w-[200px] py-4 mt-10 rounded-full font-semibold ${getButtonStyle()}`}
             >
               <Link to="/registration" className="block w-full h-full">

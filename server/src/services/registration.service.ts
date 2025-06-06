@@ -29,9 +29,7 @@ class RegistrationService {
         to: registrationData.email,
         subject: "Registration Successful",
         text: `Thank you for registering with us! Your registration ID is ${createdRegistration.id}.`,
-        react: React.createElement(RegistrationEmail, {
-          props: createdRegistration,
-        }),
+        registration: createdRegistration
       });
 
       console.log("Email sent successfully:", emailResponse);
