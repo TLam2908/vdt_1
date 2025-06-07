@@ -1,5 +1,6 @@
 import type { ProductHeroProps } from "../../types/interface";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const IPhone16 = ({
   heroImg,
@@ -58,9 +59,12 @@ const IPhone16 = ({
         </div>
 
         <div className="flex flex-col items-center space-y-4 md:space-y-6 mt-4 md:mt-8">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors">
-            Buy Now
-          </button>
+          <Link
+            to="/registration"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors"
+          >
+            Register Now
+          </Link>
           <p className="text-sm md:text-base text-gray-800 font-semibold text-center">
             From $799 or $33.29/month. for 24 months
           </p>
@@ -121,9 +125,12 @@ const IPhone16e = ({
         <div className="flex flex-col items-center w-full sm:hidden">
           {/* Buttons first on mobile */}
           <div className="flex flex-col items-center space-y-4 mb-6 order-1">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors">
-              Buy Now
-            </button>
+            <Link
+              to="/registration"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors"
+            >
+              Register Now
+            </Link>
             <p className="text-sm text-gray-800 font-semibold text-center">
               From $599 or $24.95/month. for 24 months
             </p>
@@ -152,9 +159,12 @@ const IPhone16e = ({
 
           {/* Buttons second on desktop */}
           <div className="flex flex-col items-center space-y-4">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors">
-              Buy Now
-            </button>
+            <Link
+              to="/registration"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors"
+            >
+              Register Now
+            </Link>
             <p className="text-md text-gray-800 font-semibold text-center">
               From $599 or $24.95/month. for 24 months
             </p>
@@ -194,36 +204,36 @@ const IPhone16Pro = ({
     };
   }, []);
   return (
-  <div className="flex flex-col items-center justify-center w-full min-h-screen bg-black text-white relative overflow-hidden">
-    <div className="w-full flex flex-col justify-center items-center h-full">
-      <div className="relative w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] max-w-[1200px] mt-16">
-        <img
-          src={heroImgSrc}
-          alt="iPhone 16 Pro Hero"
-          className="w-full h-[600px] sm:h-[500px] md:h-[550px] lg:h-[600px] object-cover"
-        />
-        <h1 className="absolute top-0 sm:top-[5%] md:top-[6%] lg:top-[7%] left-1/2 transform -translate-x-1/2 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold z-20">
-          iPhone 16 Pro
-        </h1>
+    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-black text-white relative overflow-hidden">
+      <div className="w-full flex flex-col justify-center items-center h-full">
+        <div className="relative w-[90%] sm:w-[85%] md:w-[75%] lg:w-[65%] max-w-[1200px] mt-16">
+          <img
+            src={heroImgSrc}
+            alt="iPhone 16 Pro Hero"
+            className="w-full h-[600px] sm:h-[500px] md:h-[550px] lg:h-[600px] object-cover"
+          />
+          <h1 className="absolute top-0 sm:top-[5%] md:top-[6%] lg:top-[7%] left-1/2 transform -translate-x-1/2 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold z-20">
+            iPhone 16 Pro
+          </h1>
 
-        <img
-          src={textImgSrc}
-          alt="iPhone 16 Pro Text"
-          className="absolute top-0 sm:top-[6%] md:top-[8%] lg:top-[10%] left-1/2 transform -translate-x-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[45%] max-w-[600px] z-10 h-[120px] sm:h-[140px] md:h-[160px] lg:h-[170px] object-cover"
-        />
+          <img
+            src={textImgSrc}
+            alt="iPhone 16 Pro Text"
+            className="absolute top-0 sm:top-[6%] md:top-[8%] lg:top-[10%] left-1/2 transform -translate-x-1/2 w-[70%] sm:w-[60%] md:w-[50%] lg:w-[45%] max-w-[600px] z-10 h-[120px] sm:h-[140px] md:h-[160px] lg:h-[170px] object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center space-y-4 md:space-y-6 mt-4 md:mt-8">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors">
+          Register Now
+        </button>
+        <p className="text-sm md:text-base text-white font-semibold text-center">
+          From $999 or $41.62/month. for 24 months
+        </p>
       </div>
     </div>
-
-    <div className="flex flex-col items-center space-y-4 md:space-y-6 mt-4 md:mt-8">
-      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition-colors">
-        Buy Now
-      </button>
-      <p className="text-sm md:text-base text-white font-semibold text-center">
-        From $999 or $41.62/month. for 24 months
-      </p>
-    </div>
-  </div>
-);
+  );
 };
 
 const ProductHero = ({ props }: { props: ProductHeroProps }) => {

@@ -33,7 +33,7 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 0.5,
         ease: "power3.out",
       }
     )
@@ -46,7 +46,7 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
         }
       )
@@ -62,7 +62,7 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
           scale: 1,
           opacity: 1,
           rotation: 0,
-          duration: 1.2,
+          duration: 0.5,
           ease: "back.out(1.7)",
         },
       )
@@ -76,7 +76,7 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
         {
           scale: 1,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.5,
           ease: "elastic.out(1, 0.3)",
         }
       );

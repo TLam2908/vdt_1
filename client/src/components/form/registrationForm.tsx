@@ -167,7 +167,7 @@ const RegistrationForm = () => {
                   w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold
                   transition-all duration-300 ease-in-out
                   ${
-                    step < currentStep
+                    (step < currentStep || currentStep == 4)
                       ? "bg-green-500 text-white shadow-lg scale-110"
                       : step === currentStep
                       ? "bg-black text-white shadow-lg scale-110 ring-4 ring-blue-200"
@@ -175,7 +175,7 @@ const RegistrationForm = () => {
                   }
                 `}
                 >
-                  {step < currentStep ? (
+                  {(step < currentStep || currentStep == 4) ? (
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -275,7 +275,7 @@ const RegistrationForm = () => {
                       ${
                         isSubmitting
                           ? "bg-gray-400 text-white cursor-not-allowed"
-                          : "bg-green-600 text-white hover:bg-green-700 hover:shadow-lg transform hover:scale-105"
+                          : "bg-black text-white hover:shadow-lg transform hover:scale-105"
                       }
                     `}
                   >
@@ -292,7 +292,7 @@ const RegistrationForm = () => {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    {isSubmitting ? "Loading..." : "Registration Successful"}
+                    {isSubmitting ? "Loading..." : "Submit"}
                   </button>
                 )}
               </div>

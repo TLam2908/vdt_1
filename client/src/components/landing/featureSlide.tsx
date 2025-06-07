@@ -6,7 +6,7 @@ const FeatureSlide = ({ title, heroSubtitle, img, color }: SlideProps) => {
 
   return (
     <div className="relative flex flex-col">
-      <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+      <div className="overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-105">
         <img 
           src={img} 
           alt={title} 

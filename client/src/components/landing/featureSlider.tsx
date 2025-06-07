@@ -50,7 +50,6 @@ const FeatureSlider: React.FC = () => {
         modules={[Navigation, Pagination, Autoplay, Mousewheel]}
         spaceBetween={20}
         slidesPerView="auto"
-        mousewheel={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -71,7 +70,7 @@ const FeatureSlider: React.FC = () => {
       >
         {features.map((feature, index) => (
           <SwiperSlide key={index} className="w-full h-full">
-            <div className="slide-item">
+            <div className="slide-item w-full h-full">
               <FeatureSlide
                 title={feature.title}
                 heroSubtitle={feature.subtitle}

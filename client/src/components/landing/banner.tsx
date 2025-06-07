@@ -43,7 +43,7 @@ const Banner = () => {
       { 
         scale: 1, 
         opacity: 1, 
-        duration: 1.5, 
+        duration: 1, 
         ease: "power3.out" 
       }
     )
@@ -55,10 +55,9 @@ const Banner = () => {
       { 
         y: 0, 
         opacity: 1, 
-        duration: 1, 
+        duration: 0.5, 
         ease: "power3.out" 
       },
-      "-=0.8" // Overlap with the image animation
     )
     
     // Text animation
@@ -68,11 +67,10 @@ const Banner = () => {
       { 
         y: 0, 
         opacity: 1, 
-        duration: 0.8, 
+        duration: 0.5, 
         stagger: 0.2, 
         ease: "back.out(1.2)" 
       },
-      "-=0.5"
     )
     
     // Button animation
@@ -100,14 +98,14 @@ const Banner = () => {
         </div>
 
         <div className="relative w-full h-full flex flex-col">
-          <div className="h-[680px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[500px] welcome-video flex overflow-hidden">
+          <div className="h-[700px] max-[2000px]:h-[600px] max-[1660px]:h-[500px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[500px] welcome-video flex overflow-hidden">
             <img id="banner-img" src={imgSrc} alt="banner" className="w-full rounded-2xl" />
           </div>
           <div className="absolute flex flex-col items-center justify-center top-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xl:left-1/4 xl:top-1/2">
-            <div id="banner-text" className=" text-white text-xl max-sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-md font-semibold">
               A Guided Tour of
             </div>
-            <div id="banner-text" className=" text-white text-xl max-sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-md font-semibold">
               iPhone 16 & iPhone 16 Pro
             </div>
             <button id="banner-button" className="px-5 py-3 rounded-full bg-white mt-5 text-black">Watch the film</button>

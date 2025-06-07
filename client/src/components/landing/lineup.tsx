@@ -104,7 +104,6 @@ const Lineup = () => {
               modules={[Navigation, Pagination, Autoplay, Mousewheel]}
               spaceBetween={20}
               slidesPerView="auto"
-              mousewheel={true}
               loop={true}
               freeMode={true}
               breakpoints={{
