@@ -3,6 +3,8 @@ import cors from "cors";
 import errorHandler from "./middlewares/error.middleware";
 
 import RegistrationRoutes from "./routes/registration.routes";
+import dotenv from 'dotenv';
+dotenv.config();  //
 
 const PORT = process.env.PORT || 8001;
 const APP_ORIGIN = process.env.APP_ORIGIN || "http://localhost:3001";
@@ -10,6 +12,7 @@ const APP_ORIGIN = process.env.APP_ORIGIN || "http://localhost:3001";
 const registrationRoutes = new RegistrationRoutes();
 
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
