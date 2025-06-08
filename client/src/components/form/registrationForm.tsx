@@ -136,74 +136,30 @@ const RegistrationForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-2xl bg-white rounded-xl shadow-xl border border-gray-200">
-        <div className="p-6 border-b border-gray-200 rounded-t-xl">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h1 className="text-2xl font-bold text-black">
+        <div className="p-4 sm:p-6 border-b border-gray-200 rounded-t-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-xl sm:text-2xl font-bold text-black">
                 Register Product
               </h1>
-              <p className="text-black mt-1">{getStepDescription()}</p>
+              <p className="text-sm sm:text-base text-gray-600 mt-1">
+                {getStepDescription()}
+              </p>
             </div>
-            <div className="text-md text-black font-semibold bg-white bg-opacity-20 px-3 py-1 rounded-full">
+            <div className="text-sm bg-gray-100 text-gray-700 font-semibold px-3 py-1 rounded-full self-start sm:ml-4">
               Step {currentStep} / {totalSteps}
             </div>
           </div>
-          {/* Progress Bar */}
-          <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
+
+          <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
             <div
-              className="bg-white h-2 rounded-full transition-all duration-500 ease-out"
+              className="bg-green-500 h-2 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6 space-y-6">
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            {[1, 2, 3, 4].map((step) => (
-              <div key={step} className="flex items-center">
-                <div
-                  className={`
-                  w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold
-                  transition-all duration-300 ease-in-out
-                  ${
-                    (step < currentStep || currentStep == 4)
-                      ? "bg-green-500 text-white shadow-lg scale-110"
-                      : step === currentStep
-                      ? "bg-black text-white shadow-lg scale-110 ring-4 ring-blue-200"
-                      : "bg-gray-200 text-gray-600"
-                  }
-                `}
-                >
-                  {(step < currentStep || currentStep == 4) ? (
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  ) : (
-                    step
-                  )}
-                </div>
-                {step < 4 && (
-                  <div
-                    className={`w-12 h-1 mx-2 transition-all duration-500 ease-in-out ${
-                      step < currentStep ? "bg-green-500" : "bg-gray-200"
-                    }`}
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-
+        <div className="p-4 sm:p-6">
           {currentStep < 4 ? (
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-8">

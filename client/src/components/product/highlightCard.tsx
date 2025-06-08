@@ -38,10 +38,8 @@ const HighlightCard = ({ props }: { props: ProductHighlights }) => {
           />
         )}
         
-        {/* Overlay gradient - luôn hiển thị trên mobile, hover trên desktop */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
 
-        {/* Text overlay - luôn hiển thị trên mobile, hover trên desktop */}
         <div className="absolute top-0 left-0 right-0 p-6 sm:p-8 md:p-10 text-white md:transform md:-translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
           {props.title.map((title, index) => (
             <h3
@@ -58,7 +56,6 @@ const HighlightCard = ({ props }: { props: ProductHighlights }) => {
         </div>
       </div>
 
-      {/* Learn more button - chỉ hiển thị trên desktop khi hover */}
       <div className="pt-4 px-2">
         <div className="hidden md:flex items-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-lg text-blue-600 font-medium">Learn more</span>
