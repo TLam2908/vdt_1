@@ -129,10 +129,10 @@ const ProductRegistation = ({ props }: { props: ProductRegistrationProps }) => {
       <div
         className={`flex flex-center max-w-7xl mx-auto ${getBgColor()} ${getShadow()} rounded-2xl overflow-hidden`}
       >
-        <div className="flex flex-row justify-around items-center w-full gap-10 pt-10 max-lg:flex-col max-lg:gap-20">
+        <div className="flex flex-row justify-around items-center w-full gap-10 pt-10 max-lg:flex-col max-lg:gap-20 ">
           <div
             id="registration-title"
-            className={`flex flex-col max-lg:text-center ${getTextColor()}`}
+            className={`flex flex-col max-lg:text-center max-lg:items-center ${getTextColor()}`}
           >
             <span className="text-4xl font-bold">iPhone Registration</span>
             <p id="registration-item" className="text-md mt-2">

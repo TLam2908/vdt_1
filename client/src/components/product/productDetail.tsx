@@ -81,7 +81,6 @@ const ProductDetail = ({ props }: { props: ProductDetailProps }) => {
             modules={[Navigation, Pagination, Autoplay, Mousewheel]}
             spaceBetween={20}
             slidesPerView="auto"
-            mousewheel={true}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,

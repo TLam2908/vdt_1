@@ -28,6 +28,7 @@ const HighlightCard = ({ props }: { props: ProductHighlights }) => {
             autoPlay
             loop
             muted
+            playsInline
           />
         ) : (
           <img
