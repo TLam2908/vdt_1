@@ -64,7 +64,7 @@ const Reason = () => {
           className="flex flex-row max-md:flex-col max-md:items-start md:justify-between items-center"
         >
           <div className="flex flex-col">
-            <div className="font-semibold text-5xl max-lg:text-4xl max-md:text-3xl mb-2">
+            <div className="font-semibold text-5xl max-lg:text-4xl max-md:text-3xl">
               Why Viettel is the best
             </div>
             <div className="font-semibold text-5xl max-lg:text-4xl max-md:text-3xl mb-18">

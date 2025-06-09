@@ -58,13 +58,13 @@ const FeatureSlider: React.FC = () => {
         freeMode={true}
         grabCursor={true}
         breakpoints={{
-          0: { slidesPerView: 1, spaceBetween: 10 },
-          480: { slidesPerView: 1, spaceBetween: 15 },
-          768: { slidesPerView: 2, spaceBetween: 20 },
-          1072: { slidesPerView: 2, spaceBetween: 30 },
-          1280: { slidesPerView: 3, spaceBetween: 30 },
-          1440: { slidesPerView: 4, spaceBetween: 30 },
-          1740: { slidesPerView: 5, spaceBetween: 35 },
+          0: { slidesPerView: 1.5, spaceBetween: 10 },
+          480: { slidesPerView: 1.5, spaceBetween: 15 },
+          768: { slidesPerView: 2.5, spaceBetween: 20 },
+          1072: { slidesPerView: 2.5, spaceBetween: 30 },
+          1280: { slidesPerView: 2.5, spaceBetween: 30 },
+          1440: { slidesPerView: 3.5, spaceBetween: 30 },
+          1740: { slidesPerView: 4.5, spaceBetween: 35 },
         }}
         className="py-8 w-full"
       >

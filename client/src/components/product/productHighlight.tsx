@@ -77,7 +77,6 @@ const ProductHighlight = ({ props }: { props: ProductHighlights[] }) => {
             spaceBetween={20}
             loop={true}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
-            // pagination={{ clickable: true }}
           >
             {props.map((highlight: ProductHighlights, index) => (
               <SwiperSlide key={index} className="w-full mx-auto">

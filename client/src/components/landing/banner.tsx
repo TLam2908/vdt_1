@@ -99,13 +99,13 @@ const Banner = () => {
 
         <div className="relative w-full h-full flex flex-col">
           <div className="h-[700px] max-[2000px]:h-[600px] max-[1660px]:h-[500px] max-2xl:h-[450px] max-xl:h-[800px] max-lg:h-[700px] max-md:h-[600px] max-sm:h-[500px] welcome-video flex overflow-hidden">
-            <img id="banner-img" src={imgSrc} alt="banner" className="w-full rounded-2xl" />
+            <img id="banner-img" src={imgSrc} alt="banner" className="w-full rounded-2xl object-cover" />
           </div>
           <div className="absolute flex flex-col items-center justify-center top-30 left-1/2 transform -translate-x-1/2 -translate-y-1/2 xl:left-1/4 xl:top-1/2">
-            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-md font-semibold">
+            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-[18px] max-sm:text-center font-semibold">
               A Guided Tour of
             </div>
-            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-md font-semibold">
+            <div id="banner-text" className=" text-white text-3xl max-2xl:text-2xl max-md:text-xl max-sm:text-[18px] max-sm:text-center font-semibold">
               iPhone 16 & iPhone 16 Pro
             </div>
             <button id="banner-button" className="px-5 py-3 rounded-full bg-white mt-5 text-black">Watch the film</button>
